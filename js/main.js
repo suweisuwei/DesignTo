@@ -8,13 +8,13 @@ function justifyFooter(){
     var footer = $("#footer");
     var dist = $("#footer")[0].offsetTop;
     var h = window.innerHeight;
-    // if(dist < h){
-    //     footer.css("position","fixed");
-    //     footer.css("bottom","0");
-    // }else{
-    //     footer.css("position","relative");
-    //     footer.css("bottom","");
-    // }
+    if(dist < h){
+        footer.css("position","fixed");
+        footer.css("bottom","0");
+    }else{
+        footer.css("position","relative");
+        footer.css("bottom","");
+    }
 }
 
 
