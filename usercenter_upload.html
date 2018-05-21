@@ -5,10 +5,10 @@
     <title>个人中心</title>
     <meta charset="utf-8" />
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-    <link rel="stylesheet" href="css/bootstrap3.3.7.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
-    <link rel="stylesheet" href="css/bootstrap3.3.7-theme.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <script src="js/jquery.min.js"></script>
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="js/bootstrap.min.js"></script>
@@ -20,8 +20,13 @@
         #main-box {
             margin-top: 100px;
         }
-        #footer{
-            width:100%;
+
+        body {
+            height: 100%;
+        }
+
+        #footer {
+            width: 100%;
         }
     </style>
 </head>
@@ -78,36 +83,70 @@
                         <br />
                         <label>共提交
                             <label class="red">999+</label>次作品，共获得
-                            <label class="red">999+</label>个赞</label>
+                            <label class="red">999+</label>个赞
+                        </label>
+                        <br />
+                        <label>联系邮箱：
+                            <a href="mailto:1009789268@qq.com">1009789268@qq.com</a>
+                        </label>
                     </div>
                 </div>
                 <!--分页栏-->
                 <div class="row">
                     <ul class="nav nav-tabs">
-                        <li role="presetation" class="active">
-                            <a href="#">个人信息</a>
-                        </li>
                         <li role="presetation">
                             <a href="#">公开作品</a>
                         </li>
-                        <li role="presetation">
+                        <li role="presetation" class="active">
                             <a href="#">上传作品</a>
                         </li>
                         <li role="presetation">
-                            <a href="#">发布需求</a>
+                            <a href="#">我的需求</a>
                         </li>
                         <li role="presetation">
                             <a href="#">提交记录</a>
                         </li>
-                        <li role="presetation">
-                            <a href="#">我的消息</a>
-                        </li>
                     </ul>
                 </div>
                 <!--分页切换的主体-->
-                <div class="row">
-                    <div class="container-fluid" style="border:2px solid black;height:90px;">
-                        
+                <div class="row" style="margin-top:20px;">
+                    <div class="container-fluid">
+                        <div class="row" style="padding:20px;">
+                            <form class="form-horizontal">
+                                <!-- 作品名行 -->
+                                <div class="form-group">
+                                    <label for="design-name" class="col-md-3 control-label">作品名称：</label>
+                                    <div class="col-md-7">
+                                        <input type="text" class="form-control" id="design-name" placeholder="">
+                                    </div>
+                                </div>
+                                <!-- 作品主题行 -->
+                                <div class="form-group">
+                                    <label for="design-theme" class="col-md-3 control-label">作品主题：</label>
+                                    <div class="col-md-7">
+                                        <select class="form-control" id="design-theme">
+                                            <option value="">AAA</option>
+                                            <option value="">BBB</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- 作品故事行 -->
+                                <div class="form-group">
+                                    <label for="design-story" class="col-md-3 control-label">作品故事：</label>
+                                    <div class="col-md-7">
+                                        <textarea id="design-story" class="form-control" rows="5" placeholder="说出你的故事吧！"></textarea>
+                                    </div>
+                                </div>
+                                <!-- 上传文件行 -->
+                                <div class="form-group">
+                                    <label for="design-name" class="col-md-3 control-label">上传作品：</label>
+                                    <div class="col-md-7">
+                                        <input type="file" class="form-control" />
+                                    </div>
+                                </div>
+                                <!-- TODO 预览上传文件 -->
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
