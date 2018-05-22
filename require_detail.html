@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>定制列表</title>
+    <meta charset="utf-8" />
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <script src="js/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="js/bootstrap.min.js"></script>
+    <style>
+        #content {
+            /* padding-top:100px; */
+        }
+
+        form p {
+            padding-top: 7px;
+        }
+
+        #footer {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!--导航-->
+    <nav class="navbar navbar-default navbar-fixed-top" style="margin-bottom: 0">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#" style="color: blueviolet">DesignTo</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="homepage.html">首页</a>
+                    </li>
+                    <li class="active">
+                        <a href="theme.html">主题</a>
+                    </li>
+                    <li class="active">
+                        <a href="custom.html">个性化</a>
+                    </li>
+                </ul>
+                <div class="row nav nabbar-nav navbar-right" style="margin-top:.4em">
+                    <div class="col-lg-9" style="height:100%">
+                        <form class="navabar-form form-inline">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search">
+                                <button type="submit" class="btn btn-defualt">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                    <ul class="col-lg-3">
+                        <li>
+                            <button type="button" class="btn btn-defualt">
+                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>User
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--页面主体-->
+    <div class="container-fluid" id="content">
+        <!--需求详情部分-->
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 panel">
+                <form class="form-horizontal panel-body" style="margin-top:100px;font-size:12pt;">
+                    <!--标题行-->
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">需求标题：</label>
+                        <div class="col-md-9">
+                            <p class="dorm-control-static">这是需求的标题。</p>
+                        </div>
+                    </div>
+                    <!--主题行-->
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">需求主题：</label>
+                        <div class="col-md-9">
+                            <p class="dorm-control-static">
+                                <span class="label label-default">需求主题</span>
+                            </p>
+                        </div>
+                    </div>
+                    <!--时间行-->
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">截止时间：</label>
+                        <div class="col-md-9">
+                            <p class="dorm-control-static">2018-12-12 00：00：00</p>
+                        </div>
+                    </div>
+                    <!--预算行-->
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">预算：</label>
+                        <div class="col-md-9">
+                            <p class="dorm-control-static">
+                                <label class="h4">￥</label>2000-4000</p>
+                        </div>
+                    </div>
+                    <!--需求描述行-->
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">需求描述：</label>
+                        <div class="col-md-9">
+                            <p class="dorm-control-static">
+                                XXX XXXX Xlkfja ij fdf 短就阿卡丽机锋网偶记看了 京东方可垃圾啊危机 人口来访接待室开了房间诶 我纪 律打开东方网 开发大 水李开复的快速路附近的萨芬看了接口连接抗裂砂浆疯狂拉升积分快乐健身房的。
+                            </p>
+                        </div>
+                    </div>
+            </div>
+            </form>
+        </div>
+        <!--需求回应用户列表-->
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="panel-title">已参与的设计师：</div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <!--参与用户列表组件-->
+                                <div class="col-xs-4 col-sm-3 col-md-2">
+                                    <a href="#" class="thumbnail">
+                                        <img src="img/宠物.jpg" class="img-circle" />
+                                        <div class="caption text-center">
+                                            <h4>USERNAME</h4>
+                                        </div>
+                                    </a>
+                                </div>
+                                <!--参与用户列表组件-->
+                                <div class="col-xs-4 col-sm-3 col-md-2">
+                                    <a href="#" class="thumbnail">
+                                        <img src="img/动图.gif" class="img-circle" />
+                                        <div class="caption text-center">
+                                            <h4>USERNAME</h4>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--需求回应详情列表-->
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="container-fluid">
+                            <!--用户需求回应详情组件-->
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <a href="#" class="thumbnail">
+                                        <img src="img/宠物.jpg" class="img-circle" />
+                                        <div class="caption text-center">
+                                            <h4>USERNAME</h4>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-9">
+                                    <img src="img/甜甜圈.jpg" style="padding:10px; width:90%;" />
+                                    <div clsss="caption">XXXXXJJODFJSLFIDSFJLKJWELFKEFKLJDFKLDSJFKJFKLDJ> fklsjflkjeljf ck nkfakejl fjdjfdsak
+                                        lfjewkf kfjds akfjae fkljlkdjfk jdfjsdklf jasdlkf s</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!--底部-->
+    <div class="panel-footer text-center" id="footer">
+        <h4>DesignTo服装设计服务平台</h4>
+        <h5>Designer:
+            <span class="glyphicon glyphicon-star" style="color: gold" aria-hidden="true"></span>Star
+        </h5>
+    </div>
+    <!--引入 main.js-->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
