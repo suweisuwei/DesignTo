@@ -1,108 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="DesignTo:war exploded" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="dda98ee6-777b-4e8b-8719-17c6cc8407b0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/css/bootstrap-theme.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/css/bootstrap-theme.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/custom.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/custom.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/design_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/design_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.eot" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.svg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.woff" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/framework.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/img/1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/刺绣.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/img/刺绣.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/动图.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/img/动图.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/宠物.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/img/宠物.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/家居.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/img/家居.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/甜甜圈.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/img/甜甜圈.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/美食.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/img/美食.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/js/jquery.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/require_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/require_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/require_submit.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/require_submit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/theme.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/theme.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/theme_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/theme_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usercenter_myrequire.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/usercenter_myrequire.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usercenter_public.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/usercenter_public.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usercenter_upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/usercenter_upload.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/~$数据库设计表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/~$数据库设计表.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/内衣/手稿58.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/内衣/手稿58.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/内衣/手稿59.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/内衣/手稿59.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/内衣/手稿60.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/内衣/手稿60.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/内衣/手稿61.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/内衣/手稿61.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/内衣/手稿62.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/内衣/手稿62.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/内衣/手稿63.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/内衣/手稿63.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/动漫装/手稿25.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/动漫装/手稿25.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/动漫装/手稿26.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/动漫装/手稿26.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/动漫装/手稿27.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/动漫装/手稿27.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/动漫装/手稿28.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/动漫装/手稿28.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/动漫装/手稿29.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/动漫装/手稿29.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/动漫装/手稿30.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/动漫装/手稿30.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/动漫装/手稿31.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/动漫装/手稿31.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/动漫装/手稿32.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/动漫装/手稿32.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/动漫装/手稿33.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/动漫装/手稿33.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/套装/手稿10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/套装/手稿10.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/套装/手稿13.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/套装/手稿13.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/套装/手稿14.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/套装/手稿14.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/套装/手稿15.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/套装/手稿15.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/套装/手稿16.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/套装/手稿16.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/套装/手稿2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/套装/手稿2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/套装/手稿5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/套装/手稿5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/套装/手稿6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/套装/手稿6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/套装/手稿7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/套装/手稿7.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/婚纱/手稿18.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/婚纱/手稿18.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/婚纱/手稿19.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/婚纱/手稿19.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/婚纱/手稿24.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/婚纱/手稿24.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/婚纱/手稿3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/婚纱/手稿3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/婚纱/手稿34.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/婚纱/手稿34.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/婚纱/手稿70.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/婚纱/手稿70.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/婚纱/手稿72.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/婚纱/手稿72.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/婚纱/手稿8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/婚纱/手稿8.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/婚纱/手稿9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/婚纱/手稿9.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/旗袍/手稿36.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/旗袍/手稿36.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/旗袍/手稿37.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/旗袍/手稿37.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/旗袍/手稿38.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/旗袍/手稿38.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/旗袍/手稿39.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/旗袍/手稿39.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/旗袍/手稿40.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/旗袍/手稿40.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/旗袍/手稿41.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/旗袍/手稿41.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/旗袍/手稿42.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/旗袍/手稿42.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/旗袍/手稿43.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/旗袍/手稿43.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/旗袍/手稿44.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/旗袍/手稿44.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/男装/手稿45.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/男装/手稿45.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/男装/手稿47.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/男装/手稿47.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/男装/手稿48.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/男装/手稿48.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/男装/手稿49.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/男装/手稿49.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/男装/手稿50.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/男装/手稿50.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/男装/手稿51.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/男装/手稿51.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/男装/手稿52.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/男装/手稿52.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/男装/手稿53.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/男装/手稿53.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/男装/手稿54.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/男装/手稿54.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/男装/手稿55.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/男装/手稿55.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/男装/手稿56.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/男装/手稿56.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/礼服/手稿1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/礼服/手稿1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/礼服/手稿11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/礼服/手稿11.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/礼服/手稿12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/礼服/手稿12.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/礼服/手稿17.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/礼服/手稿17.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/礼服/手稿20.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/礼服/手稿20.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/礼服/手稿21.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/礼服/手稿21.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/礼服/手稿22.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/礼服/手稿22.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/礼服/手稿23.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/礼服/手稿23.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/礼服/手稿4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/礼服/手稿4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/礼服/手稿57.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/礼服/手稿57.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/首饰/手稿64.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/首饰/手稿64.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/首饰/手稿65.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/首饰/手稿65.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/首饰/手稿66.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/首饰/手稿66.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/首饰/手稿67.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/首饰/手稿67.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/首饰/手稿68.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/首饰/手稿68.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/手稿图/首饰/手稿69.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/手稿图/首饰/手稿69.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/数据库设计表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/数据库设计表.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/db/DBConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/img/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/img/1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/static/~$数据库设计表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/~$数据库设计表.xlsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -116,13 +28,98 @@
     <leaf>
       <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/index.jsp">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="490">
+              <caret line="23" column="39" lean-forward="true" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="100" selection-start-line="100" selection-end-line="100" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#723#724#0" expanded="true" />
+                <element signature="e#749#750#0" expanded="true" />
+                <element signature="e#784#785#0" expanded="true" />
+                <element signature="e#814#815#0" expanded="true" />
+                <element signature="e#849#850#0" expanded="true" />
+                <element signature="e#880#881#0" expanded="true" />
+                <element signature="e#928#929#0" expanded="true" />
+                <element signature="e#968#969#0" expanded="true" />
+                <element signature="e#1003#1004#0" expanded="true" />
+                <element signature="e#1034#1035#0" expanded="true" />
+                <element signature="e#1082#1083#0" expanded="true" />
+                <element signature="e#1122#1123#0" expanded="true" />
+                <element signature="e#1153#1154#0" expanded="true" />
+                <element signature="e#1180#1181#0" expanded="true" />
+                <element signature="e#1220#1221#0" expanded="true" />
+                <element signature="e#1252#1253#0" expanded="true" />
+                <element signature="e#1284#1285#0" expanded="true" />
+                <element signature="e#1312#1313#0" expanded="true" />
+                <element signature="e#1354#1355#0" expanded="true" />
+                <element signature="e#1388#1389#0" expanded="true" />
+                <element signature="e#1416#1417#0" expanded="true" />
+                <element signature="e#1442#1443#0" expanded="true" />
+                <element signature="e#1478#1479#0" expanded="true" />
+                <element signature="e#1508#1509#0" expanded="true" />
+                <element signature="e#1541#1542#0" expanded="true" />
+                <element signature="e#1570#1571#0" expanded="true" />
+                <element signature="e#1614#1615#0" expanded="true" />
+                <element signature="e#1650#1651#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DBConnection.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/db/DBConnection.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="41" column="27" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="docComment;method#getConnection#0;class#DBConnection#0" />
+                <element signature="docComment;method#querySql#0;class#DBConnection#0" />
+                <element signature="docComment;method#updateSql#0;class#DBConnection#0" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/db/DBConnection.java" />
+        <option value="$PROJECT_DIR$/web/index.jsp" />
+        <option value="$PROJECT_DIR$/src/model/User.java" />
+        <option value="$PROJECT_DIR$/src/controller/UserController.java" />
+      </list>
+    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -136,6 +133,13 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
@@ -181,6 +185,9 @@
       </profile-state>
     </entry>
   </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -197,13 +204,35 @@
             <path>
               <item name="DesignTo" type="b2602c69:ProjectViewProjectNode" />
               <item name="DesignTo" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DesignTo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DesignTo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DesignTo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DesignTo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DesignTo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DesignTo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DesignTo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DesignTo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DesignTo" type="b2602c69:ProjectViewProjectNode" />
               <item name="DesignTo" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -224,6 +253,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/img" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/web/static" />
     </key>
   </component>
@@ -239,7 +270,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.23">
+    <configuration name="User" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="model.User" />
+      <module name="DesignTo" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -289,18 +331,77 @@
           </settings>
         </artifact>
       </deployment>
-      <server-settings />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Tomcat_8_5_23_DesignTo" />
+      </server-settings>
       <predefined_log_file id="Tomcat" enabled="true" />
       <predefined_log_file id="Tomcat Catalina" enabled="true" />
       <predefined_log_file id="Tomcat Manager" enabled="false" />
       <predefined_log_file id="Tomcat Host Manager" enabled="false" />
       <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="63015" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
       <method>
         <option name="BuildArtifacts" enabled="true">
           <artifact name="DesignTo:war exploded" />
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Tomcat Server.Tomcat 8.5.23" />
+      <item itemvalue="Application.User" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.User" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -312,17 +413,19 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1527096017514</updated>
-      <workItem from="1527096021940" duration="208000" />
+      <workItem from="1527096021940" duration="4297000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="208000" />
+    <option name="totallyTimeSpent" value="4297000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="right" id="Palette&#9;" />
       <window_info anchor="bottom" id="Java Enterprise" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
@@ -330,7 +433,7 @@
       <window_info anchor="right" id="Maven Projects" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3296593" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info id="Designer" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
@@ -354,15 +457,109 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="5" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/db/DBConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="41" column="27" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#getConnection#0;class#DBConnection#0" />
+            <element signature="docComment;method#querySql#0;class#DBConnection#0" />
+            <element signature="docComment;method#updateSql#0;class#DBConnection#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="100" selection-start-line="100" selection-end-line="100" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#723#724#0" expanded="true" />
+            <element signature="e#749#750#0" expanded="true" />
+            <element signature="e#784#785#0" expanded="true" />
+            <element signature="e#814#815#0" expanded="true" />
+            <element signature="e#849#850#0" expanded="true" />
+            <element signature="e#880#881#0" expanded="true" />
+            <element signature="e#928#929#0" expanded="true" />
+            <element signature="e#968#969#0" expanded="true" />
+            <element signature="e#1003#1004#0" expanded="true" />
+            <element signature="e#1034#1035#0" expanded="true" />
+            <element signature="e#1082#1083#0" expanded="true" />
+            <element signature="e#1122#1123#0" expanded="true" />
+            <element signature="e#1153#1154#0" expanded="true" />
+            <element signature="e#1180#1181#0" expanded="true" />
+            <element signature="e#1220#1221#0" expanded="true" />
+            <element signature="e#1252#1253#0" expanded="true" />
+            <element signature="e#1284#1285#0" expanded="true" />
+            <element signature="e#1312#1313#0" expanded="true" />
+            <element signature="e#1354#1355#0" expanded="true" />
+            <element signature="e#1388#1389#0" expanded="true" />
+            <element signature="e#1416#1417#0" expanded="true" />
+            <element signature="e#1442#1443#0" expanded="true" />
+            <element signature="e#1478#1479#0" expanded="true" />
+            <element signature="e#1508#1509#0" expanded="true" />
+            <element signature="e#1541#1542#0" expanded="true" />
+            <element signature="e#1570#1571#0" expanded="true" />
+            <element signature="e#1614#1615#0" expanded="true" />
+            <element signature="e#1650#1651#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="23" column="39" lean-forward="true" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>DesignTo:war exploded</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Web</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
+          <last-edited>itcast-tools-1.4</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -375,6 +572,18 @@
       <state key="JdkListConfigurable.UI">
         <settings>
           <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>DesignTo</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -398,6 +607,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>mysql-connector-java-5.1.44-bin</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
