@@ -23,7 +23,9 @@
             background-color: rgba(0, 0, 0, 0);
             border: 2px solid rgb(214, 210, 210);
         }
-
+    .label{
+        margin-right:20px;
+    }
         #header-box {
             display: block;
             margin: 0;
@@ -49,9 +51,10 @@
             width: 100%;
 
         }
+
         .jumbotron {
-      padding-bottom: 0;
-    }
+            padding-bottom: 0;
+        }
     </style>
 </head>
 
@@ -88,7 +91,7 @@
     </nav>
 
 
-    <div class="jumbotron">
+    <div class="jumbotron" style="height:600px;">
         <div class="container-fluid" id="header-box">
 
             <img src="img/1.jpg" alt="..." style="height:600px;width:100%;position: absolute;">
@@ -101,46 +104,113 @@
 
             </div>
         </div>
-    </div><br/>
+    </div>
+    <br/>
+    <!--列表主体-->
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
-                <div class="container-fluid">
+                <div class="container" style="padding-top:10px;">
+                    <!--需求列表组件-->
                     <div class="row">
-                        <div class="col-md-3">
-                            <img src="手稿图/手稿21.jpg" style="width: 60%">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <a href="require_detail.html" class="h2">
-                                需求标题
-                            </a>
-                            <div class="row">
-                                <div class="col-md-5 ">
-                                    <span class="label label-default">主题</span>
-                                </div>
-                                <div class="col-md-5">
-                                    <span class="label label-default">截止时间</span>
+                        <div class="panel panel-default" style="height:340px;">
+                            <!--头像-->
+                            <div class="col-md-3" style="display: inline;">
+                                <div class="thumbnail">
+                                    <img src="img/宠物.jpg" />
+                                    <div class="caption text-center">
+                                        <h4>USERNAME</h4>
+                                    </div>
                                 </div>
                             </div>
-
-                            <div class="row">
-                                <div class="col-md-5 ">
-                                        <label >发布者</label>
-                                </div>
-                                <div class="col-md-5">
-                                        <label >发布时间</label>
+                            <!--内容-->
+                            <div class="col-md-7" style="height:100%;">
+                                <div class="container-fluid" style="height:100%">
+                                    <!--title-->
+                                    <div class="row">
+                                        <a href="#">
+                                            <h2>This is the title.</h2>
+                                        </a>
+                                    </div>
+                                    <!--tags(time and type)-->
+                                    <div class="row">
+                                        <span class="label label-success">
+                                            分类
+                                        </span>
+                                        <span class="label label-warning">
+                                            2018-12-12 00:00:00
+                                        </span>
+                                    </div>
+                                    <!--content-->
+                                    <div class="row">
+                                        <p>jdkfajk ljbjkje jckjeji jdkjei jclaji cakj jthisi dis tha the wacirjktk djk jthciaq
+                                            zjlp fr .</p>
+                                    </div>
+                                    <!--submitter-->
+                                    <div class="row" style="position: absolute;bottom:1em;">
+                                        <a href="#">USERNAME</a>
+                                        发布于
+                                        <label id="submit-time">2018年2月12日19时18分12秒</label>
+                                    </div>
                                 </div>
                             </div>
-
+                            <!--预算-->
+                            <div class="col-md-2">
+                                <h2>
+                                    <label style="color:red;">¥</label>2000-4000</h2>
+                            </div>
                         </div>
                     </div>
+                    <!--需求列表组件-->
                     <div class="row">
-                        <div class="col-md-3">
-                            <span class="glyphicon glyphicon-jpy" aria-hidden="true"></span>&nbsp;2000-4000
+                            <div class="panel panel-default" style="height:340px;">
+                                <!--头像-->
+                                <div class="col-md-3" style="display: inline;">
+                                    <div class="thumbnail">
+                                        <img src="img/宠物.jpg" />
+                                        <div class="caption text-center">
+                                            <h4>USERNAME</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--内容-->
+                                <div class="col-md-7" style="height:100%;">
+                                    <div class="container-fluid" style="height:100%">
+                                        <!--title-->
+                                        <div class="row">
+                                            <a href="#">
+                                                <h2>This is the title.</h2>
+                                            </a>
+                                        </div>
+                                        <!--tags(time and type)-->
+                                        <div class="row">
+                                            <span class="label label-success">
+                                                分类
+                                            </span>
+                                            <span class="label label-warning">
+                                                2018-12-12 00:00:00
+                                            </span>
+                                        </div>
+                                        <!--content-->
+                                        <div class="row">
+                                            <p>jdkfajk ljbjkje jckjeji jdkjei jclaji cakj jthisi dis tha the wacirjktk djk jthciaq
+                                                zjlp fr .</p>
+                                        </div>
+                                        <!--submitter-->
+                                        <div class="row" style="position: absolute;bottom:1em;">
+                                            <a href="#">USERNAME</a>
+                                            发布于
+                                            <label id="submit-time">2018年2月12日19时18分12秒</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--预算-->
+                                <div class="col-md-2">
+                                    <h2>
+                                        <label style="color:red;">¥</label>2000-4000</h2>
+                                </div>
+                            </div>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
