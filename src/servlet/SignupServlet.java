@@ -1,6 +1,5 @@
 package servlet;
 
-import controller.UserController;
 import model.User;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileItemFactory;

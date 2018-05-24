@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: haoxingxiao
+  Date: 2018/5/25
+  Time: 00:44
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -7,8 +14,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>注册</title>
-
+    <title>登录</title>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -45,11 +51,11 @@
                     <a href="custom.html">个性化</a>
                 </li>
             </ul>
-            <div class="row nav nabbar-nav navbar-right" style="margin-top:.4em">
+            <div class="row nav navbar-nav navbar-right" style="margin-top:.4em">
 
                 <div class="col-md-12">
                     <div class="col-md-3">
-                        <button type="button" class="btn btn-defualt">Signup</button>
+                        <button type="button" class="btn btn-default">Signup</button>
                     </div>
                     <div class="col-md-3"></div>
                     <button type="button" class="btn btn-defualt">Login</button>
@@ -57,62 +63,30 @@
             </div>
         </div>
     </div>
+    </div>
 </nav>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <form class="form-horizontal" style="padding: 150px;" method="post" action="/signup" enctype="multipart/form-data">
+            <form class="form-horizontal" style="padding: 150px;" method="post" action="/login">
                 <div class="form-group">
-                    <label for="inputUsername" class="col-sm-3 control-label">用户名</label>
-                    <div class="col-sm-9">
+                    <label for="inputUsername" class="col-sm-4 control-label">用户名</label>
+                    <div class="col-sm-8">
                         <input type="text" class="form-control input-md" id="inputUsername" placeholder="请输入用户名" name="username">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputPassword" class="col-sm-3 control-label">密码</label>
-                    <div class="col-md-9">
+                    <label for="inputPassword" class="col-sm-4 control-label">密码</label>
+                    <div class="col-md-8">
 
                         <input type="password" class="form-control input-md" id="inputPassword" placeholder="请输入密码" name="password">
 
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="inputTel" class="col-sm-3 control-label">电话</label>
-                    <div class="col-md-9">
-
-                        <input type="text" class="form-control input-md" id="inputTel" placeholder="请输入电话" name="tele">
-
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputEmail" class="col-sm-3 control-label">邮箱</label>
-                    <div class="col-md-9">
-
-                        <input type="email" class="form-control input-md" id="inputEmail" placeholder="请输入邮箱" name="email">
-
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputSex" class="col-sm-3 control-label">性别</label>
-                    <div class="col-md-9">
-
-                        <select class="form-control input-md" id="inputSex" name="sex">
-                            <option value="M">男</option>
-                            <option value="F">女</option>
-                        </select>
-
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputHeader" class="col-sm-3 control-label">上传头像</label>
-                    <div class="col-md-9">
-                        <input type="file" name="header" id="inputHeader" />
-                    </div>
-                </div>
 
                 <div class="form-group">
-                    <div class="col-sm-offset-3 col-sm-9">
-                        <input class="btn btn-default btn-lg" type="submit" value="提交"/>
+                    <div class="col-sm-offset-4 col-sm-8">
+                        <button type="submit" class="btn btn-default btn-lg">Submit</button>
                     </div>
                 </div>
 
@@ -129,10 +103,10 @@
 
 
 <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
-<script src="web/static/js/jquery.min.js"></script>
+<script src="js/jquery.min.js"></script>
 <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
-<script src="web/static/js/bootstrap.min.js"></script>
-<script src="web/static/js/main.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
 </body>
 
 </html>
