@@ -14,7 +14,7 @@ public class PublicController {
             ResultSet rs = db.DBConnection.querySql("select * from public_design order by count desc limit " + count + ";");
             rs.next();
             while(!rs.isAfterLast()){
-                list.add(new PublicDesign());
+                list.add(new PublicDesign(rs));
             }
         }catch (Exception e){
             e.printStackTrace();
