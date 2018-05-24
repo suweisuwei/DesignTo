@@ -1,5 +1,7 @@
 package model;
 
+import java.sql.ResultSet;
+
 public class CustomDesign {
     private int cid;
     private int rid;
@@ -7,6 +9,18 @@ public class CustomDesign {
     private String img;
     private String desp;
 
+    public CustomDesign(ResultSet rs){
+        try {
+            setCid(rs.getInt(1));
+            setRid(rs.getInt(2));
+            setUid(rs.getInt(3));
+            setImg(rs.getString(4));
+            setDesp(rs.getString(5));
+        }catch (Exception e){
+            cid = 0;
+            e.printStackTrace();
+        }
+    }
     public int getCid() {
         return cid;
     }

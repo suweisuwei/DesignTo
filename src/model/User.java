@@ -2,6 +2,8 @@ package model;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.LinkedList;
+import java.util.List;
 
 public class User {
     private int uid;
@@ -12,19 +14,22 @@ public class User {
     private char sex;
     private String header;
 
+    public User(){
+        uid = 0;
+    }
     /**
      * 返回用户所有信息，如果用户不存在，返回 uid=0的对象。
      * @param rs
      */
     public User(ResultSet rs){
         try {
-            uid = rs.getInt(1);
-            username = rs.getString(2);
-            password = rs.getString(3);
-            tele = rs.getString(4);
-            email = rs.getString(5);
-            sex = rs.getString(6).charAt(0);
-            header = rs.getString(7);
+            setUid(rs.getInt(1));
+            setUsername(rs.getString(2));
+            setPassword(rs.getString(3));
+            setTele(rs.getString(4));
+            setEmail(rs.getString(5));
+            setSex(rs.getString(6).charAt(0));
+            setHeader(rs.getString(7));
         }catch (Exception e){
             uid = 0;
         }
@@ -85,9 +90,15 @@ public class User {
     public void setHeader(String header) {
         this.header = header;
     }
-    public static User getUserByName(String name){
+
+    /**
+     * 获取单个用户的操作内部接口
+     * @param sql
+     * @return
+     */
+    private static User getOneUser(String sql){
         try {
-            ResultSet rs = db.DBConnection.querySql("select * from user where username='"+name+"';");
+            ResultSet rs = db.DBConnection.querySql(sql);
             rs.next();
             User u = new User(rs);
             rs.close();
@@ -98,19 +109,50 @@ public class User {
         }
     }
 
-
-    public static void main(String[] args){
+    /**
+     * 获取多个用户的内部操作接口
+     * @param sql
+     * @return
+     */
+    private static List<User> getMultiUser(String sql){
+        List<User> list = new LinkedList<>();
         try {
-            ResultSet rs = db.DBConnection.querySql("select * from user");
+            ResultSet rs = db.DBConnection.querySql(sql);
             rs.next();
             while(!rs.isAfterLast()){
-                User u = new User(rs);
-                System.out.println(u.getUsername()+" header is:"+u.getHeader());
-                rs.next();
+                list.add(new User(rs));
             }
             rs.close();
         }catch (Exception e){
             e.printStackTrace();
+        }
+        return list;
+    }
+
+    /**
+     * 通过用户名获取用户信息
+     * @param name
+     * @return
+     */
+    public static User getUserByName(String name){
+        return getOneUser("select * from user where username = '"+name+"';");
+    }
+
+    /**
+     * 通过用户 ID 获取用户信息
+     * @param id
+     * @return
+     */
+    public static User getUserById(int id){
+        return getOneUser("select * from user where uid = "+id+";");
+    }
+
+    public static boolean addOneUser(String username, String password, String tele, String email, char sex, String img){
+        try {
+            return db.DBConnection.updateSql("insert into user(username,password,tel,email,sex,header) values('" + username + "','" + password + "','" + tele + "','" + email + "','" + sex + "','" + img + "');");
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
         }
     }
 }

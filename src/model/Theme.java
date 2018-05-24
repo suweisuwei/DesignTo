@@ -1,10 +1,22 @@
 package model;
 
+import java.sql.ResultSet;
+
 public class Theme {
     private int tid;
     private String name;
     private String img;
 
+    public Theme(ResultSet rs){
+        try{
+            setTid(rs.getInt(1));
+            setName(rs.getString(2));
+            setImg(rs.getString(3));
+        }catch (Exception e){
+            tid = 0;
+            e.printStackTrace();
+        }
+    }
     public int getTid() {
         return tid;
     }
