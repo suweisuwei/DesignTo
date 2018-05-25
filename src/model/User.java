@@ -1,7 +1,8 @@
 package model;
 
+import db.DBConnection;
+
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -16,10 +17,12 @@ public class User {
 
     public User(){
         uid = 0;
+        username = "";
+
     }
     /**
      * 返回用户所有信息，如果用户不存在，返回 uid=0的对象。
-     * @param rs
+     * @param rs resultSet
      */
     public User(ResultSet rs){
         try {
@@ -98,10 +101,13 @@ public class User {
     private static User getOneUser(String sql){
         try {
             ResultSet rs = db.DBConnection.querySql(sql);
-            rs.next();
-            User u = new User(rs);
-            rs.close();
-            return u;
+            if(rs.next()){
+                User u = new User(rs);
+                rs.close();
+                return u;
+            }else{
+                return new User();
+            }
         }catch (Exception e){
             e.printStackTrace();
             return null;
@@ -153,5 +159,35 @@ public class User {
             e.printStackTrace();
             return false;
         }
+    }
+
+    public static int getUserDesignCount(int uid){
+        int publicCount;
+        try {
+            ResultSet rs = DBConnection.querySql("select count(*) from public_design where uid=" + uid + ";");
+            if(rs.next()) {
+                publicCount = rs.getInt(1);
+            }else{
+                publicCount = 0;
+            }
+        } catch (Exception e) {
+            publicCount = 0;
+        }
+        return publicCount;
+    }
+
+    public static int getUserLikeCount(int uid){
+        int likeCount;
+        try {
+            ResultSet rs = DBConnection.querySql("select sum(count) from public_design where uid = " + uid + ";");
+            if(rs.next()) {
+                likeCount = Integer.parseInt(rs.getString(1));
+            }else{
+                likeCount = 0;
+            }
+        } catch (Exception e) {
+            likeCount = 0;
+        }
+        return likeCount;
     }
 }

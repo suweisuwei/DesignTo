@@ -17,7 +17,7 @@ public class PublicDesign {
     private Timestamp time;
     private String img;
     private int count;
-
+    private int uid;
 
     public PublicDesign(){
         pid = 0;
@@ -31,6 +31,7 @@ public class PublicDesign {
             setTime(rs.getTimestamp(5));
             setImg(rs.getString(6));
             setCount(rs.getInt(7));
+            setUid(rs.getInt(8));
         } catch (Exception e) {
             pid = 0;
             e.printStackTrace();
@@ -94,6 +95,14 @@ public class PublicDesign {
         this.count = count;
     }
 
+    public int getUid() {
+        return uid;
+    }
+
+    public void setUid(int uid) {
+        this.uid = uid;
+    }
+
     /**
      * 插入一条新的公开作品
      *
@@ -147,10 +156,8 @@ public class PublicDesign {
         List<PublicDesign> result = new LinkedList<>();
         try {
             ResultSet rs = DBConnection.querySql("select * from public_design where uid = " + uid + ";");
-            rs.next();
-            while (!rs.isAfterLast()) {
+            while (rs.next()) {
                 result.add(new PublicDesign(rs));
-                rs.next();
             }
         } catch (Exception e) {
             e.printStackTrace();

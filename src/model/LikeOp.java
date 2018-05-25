@@ -35,11 +35,14 @@ public class LikeOp {
     public static boolean liked(int uid, int pid){
         try {
             ResultSet rs = DBConnection.querySql("select count(*) from like_op where uid =  " + uid + " and pid = " + pid + ";");
-            rs.next();
-            int count = rs.getInt(1);
-            if (count > 0) {
-                //已经存在该条记录。
-                return true;
+            if(rs.next()) {
+                int count = rs.getInt(1);
+                if (count > 0) {
+                    //已经存在该条记录。
+                    return true;
+                } else {
+                    return false;
+                }
             }else{
                 return false;
             }

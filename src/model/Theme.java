@@ -3,6 +3,8 @@ package model;
 import db.DBConnection;
 
 import java.sql.ResultSet;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Theme {
     private int tid;
@@ -62,5 +64,20 @@ public class Theme {
             e.printStackTrace();
             return new Theme();
         }
+    }
+
+    public static List<Theme> listTheme(){
+        List<Theme> result = new LinkedList<>();
+        try{
+            ResultSet rs = DBConnection.querySql("select * from theme");
+            rs.next();
+            while(!rs.isAfterLast()){
+                result.add(new Theme(rs));
+                rs.next();
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return result;
     }
 }

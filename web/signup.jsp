@@ -36,13 +36,13 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active">
-                    <a href="homepage.html">首页</a>
+                    <a href="homepage.jsp">首页</a>
                 </li>
                 <li>
-                    <a href="theme.html">主题</a>
+                    <a href="theme.jsp">主题</a>
                 </li>
                 <li>
-                    <a href="custom.html">个性化</a>
+                    <a href="custom.jsp">个性化</a>
                 </li>
             </ul>
             <div class="row nav nabbar-nav navbar-right" style="margin-top:.4em">
@@ -61,11 +61,13 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <form class="form-horizontal" style="padding: 150px;" method="post" action="/signup" enctype="multipart/form-data">
+            <form class="form-horizontal" style="padding: 150px;" method="post" action="/signup"
+                  enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="inputUsername" class="col-sm-3 control-label">用户名</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control input-md" id="inputUsername" placeholder="请输入用户名" name="username">
+                        <input type="text" class="form-control input-md" id="inputUsername" placeholder="请输入用户名"
+                               name="username">
 
                     </div>
                     <span id="usernameInfo" style="position: absolute;right:-20px;"></span>
@@ -74,7 +76,8 @@
                     <label for="inputPassword" class="col-sm-3 control-label">密码</label>
                     <div class="col-md-9">
 
-                        <input type="password" class="form-control input-md" id="inputPassword" placeholder="请输入密码" name="password">
+                        <input type="password" class="form-control input-md" id="inputPassword" placeholder="请输入密码"
+                               name="password">
 
                     </div>
                 </div>
@@ -90,7 +93,8 @@
                     <label for="inputEmail" class="col-sm-3 control-label">邮箱</label>
                     <div class="col-md-9">
 
-                        <input type="email" class="form-control input-md" id="inputEmail" placeholder="请输入邮箱" name="email">
+                        <input type="email" class="form-control input-md" id="inputEmail" placeholder="请输入邮箱"
+                               name="email">
 
                     </div>
                 </div>
@@ -108,7 +112,7 @@
                 <div class="form-group">
                     <label for="inputHeader" class="col-sm-3 control-label">上传头像</label>
                     <div class="col-md-9">
-                        <input type="file" name="header" id="inputHeader" />
+                        <input type="file" name="header" id="inputHeader"/>
                     </div>
                 </div>
 
@@ -136,23 +140,23 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
 <script>
-    $("#inputUsername").change(function (ev) {
+    $("#inputUsername").change(function (e) {
         var info = $("#usernameInfo");
         info.text("…");
 
         var username = $("#inputUsername").val();
         $.get(
             "/userexist",
-            {username:username},
-            function(data){
-                console.log("user exist:"+data);
-                console.log(data=="true");
-                if(data == "true"){
+            {username: username},
+            function (data) {
+                console.log("user exist:" + data);
+                console.log(data === "true");
+                if (data === "true") {
                     info.text("用户名已存在！");
-                    info.css("color","red");
-                }else{
+                    info.css("color", "red");
+                } else {
                     info.text("用户名可用！");
-                    info.css("color","green");
+                    info.css("color", "green");
                 }
             }
         );

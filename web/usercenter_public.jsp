@@ -46,6 +46,7 @@
 
 <body>
 <%
+    boolean self = false;
     //read cookie
     int uid = 0;
     Cookie[] cs = request.getCookies();
@@ -54,9 +55,20 @@
             uid = Integer.parseInt(c.getValue());
         }
     }
-    if (uid == 0) {
+    //访问谁的主页
+    int owner = 0;
+    String o = request.getParameter("uid");
+    try {
+        owner = Integer.parseInt(o);
+    } catch (Exception e) {
+    }
+    //未登录用户想看自己的。禁止。
+    if (uid == 0 && owner == 0) {
         MessageDispatcher.message(response, "warning", "登录超时！请重新登录！", "login.jsp");
         return;
+    }
+    if (owner == 0 || uid == owner) {
+        self = true;
     }
     User user = User.getUserById(uid);
     char sex;
@@ -67,13 +79,8 @@
     } else {
         sex = '?';
     }
-    //读取作品统计和点赞统计
-    ResultSet rs = DBConnection.querySql("select count(*) from public_design where uid=" + uid + ";");
-    rs.next();
-    String publicCount = rs.getString(1);
-    ResultSet rs2 = DBConnection.querySql("select sum(count) from public_design where uid = " + uid + ";");
-    rs2.next();
-    String likeCount = rs2.getString(1);
+    int publicCount = User.getUserDesignCount(user.getUid());
+    int likeCount = User.getUserLikeCount(user.getUid());
     List<PublicDesign> list = PublicDesign.listPublicByUser(uid);
 %>
 <!--导航-->
@@ -98,7 +105,7 @@
 
                 <ul class="col-lg-3">
                     <li>
-                        <button type="button" class="btn btn-defualt">
+                        <button type="button" class="btn btn-default">
                             <span class="glyphicon glyphicon-user" aria-hidden="true"></span><%=user.getUsername()%>
                         </button>
                     </li>
@@ -131,23 +138,32 @@
                         <a href="mailto:<%=user.getEmail()%>"><%=user.getEmail()%>
                         </a>
                     </label>
+                    <br/>
+                    <label>联系电话：</label>
+                    <a href="#"><%=user.getTele()%>
+                    </a>
+                    </label>
                 </div>
             </div>
             <!--分页栏-->
             <div class="row">
                 <ul class="nav nav-tabs">
                     <li role="presentation" class="active">
-                        <a href="usercenter_public.jsp">公开作品</a>
+                        <a href="usercenter_public.jsp?uid=<%=owner%>">公开作品</a>
                     </li>
+                    <%if (self) {%>
                     <li role="presentation">
-                        <a href="usercenter_upload.jsp">上传作品</a>
+                        <a href="usercenter_upload.jsp?uid=<%=owner%>">上传作品</a>
                     </li>
+                    <%}%>
                     <li role="presentation">
-                        <a href="usercenter_myrequire.jsp">我的需求</a>
+                        <a href="usercenter_myrequire.jsp?uid=<%=owner%>"><%=self ? "我的" : "个性化"%>需求</a>
                     </li>
+                    <%if (self) {%>
                     <li role="presentation">
-                        <a href="#">我的服务</a>
+                        <a href="usercenter_custom.jsp?uid=<%=owner%>">我的服务</a>
                     </li>
+                    <%}%>
                 </ul>
             </div>
             <!--分页切换的主体-->
@@ -159,25 +175,29 @@
                             for (PublicDesign design : list) {
                         %>
                         <div class="col-md-3 col-xs-6 col-sm-4">
-                            <div class="thumbnail">
+                            <div class="thumbnail" onclick="window.location='design_detail.jsp?pid=<%=design.getPid()%>'" >
                                 <img style="height:200px;" src="<%=design.getImg()%>" alt="...">
                                 <div class="caption">
-                                    <h3><%=design.getName()%></h3>
-                                    <p><%=design.getDesp()%></p>
+                                    <h3><%=design.getName()%>
+                                    </h3>
+                                    <p><%=design.getDesp()%>
+                                    </p>
                                     <div class="row">
                                         <p>
                                         <div class="col-md-5  col-md-offset-1">
                                             <label>
                                                 <span class="glyphicon glyphicon-heart" style="color:red;"
                                                       aria-hidden="true"></span>
-                                                <a href="#"><%=design.getCount()%></a>
+                                                <a href="#"><%=design.getCount()%>
+                                                </a>
                                             </label>
                                         </div>
-
+                                        <%if (!self) {%>
                                         <div class="col-md-5">
                                             <a href="#" class="btn btn-primary pull-right" role="button">
                                                 <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>点赞</a>
                                         </div>
+                                        <%}%>
                                     </div>
                                 </div>
                             </div>

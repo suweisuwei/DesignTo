@@ -7,12 +7,12 @@
 --%>
 <!--
 传入：title：页面标题
-    type：消息类型（success、warning、danger、info 等）
+type：消息类型（success、warning、danger、info 等）
 
-    content：消息内容
-    caller：返回的页面 URL。
+content：消息内容
+caller：返回的页面 URL。
 -->
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title>提示信息</title>
@@ -23,12 +23,12 @@
     String caller = request.getParameter("caller");
     String content = request.getParameter("content");
     String type = request.getParameter("type");
-    if(caller == null){
+    if (caller == null) {
         caller = "/index.jsp";
     }
-    if(content == null){
+    if (content == null) {
         content = "未知错误！";
-        type="danger";
+        type = "danger";
     }
 %>
 <div class="container-fluid" style="padding:20px;">
@@ -39,7 +39,8 @@
                     <div class="panel-title">提示</div>
                 </div>
                 <div class="panel panel-body">
-                    <h2><%=URLDecoder.decode(content)%></h2>
+                    <h2><%=URLDecoder.decode(content)%>
+                    </h2>
                     <div class="row">
                         <div class="col-md-2 col-md-offset-10">
                             <button class="btn btn-primary" onclick="window.location='<%=caller%>'">确认</button>

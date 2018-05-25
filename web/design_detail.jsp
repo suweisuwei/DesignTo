@@ -1,7 +1,8 @@
 <%@ page import="model.User" %>
 <%@ page import="servlet.MessageDispatcher" %>
 <%@ page import="model.PublicDesign" %>
-<%@ page import="model.Theme" %><%--
+<%@ page import="model.Theme" %>
+<%@ page import="model.LikeOp" %><%--
   Created by IntelliJ IDEA.
   User: haoxingxiao
   Date: 2018/5/25
@@ -46,12 +47,11 @@
             uid = Integer.parseInt(c.getValue());
         }
     }
-    if (uid != 0) {
-        user = User.getUserById(uid);
-    }
+    user = User.getUserById(uid);
+
     //handle the design
-    int pid = 0;
-    PublicDesign design = null;
+    int pid;
+    PublicDesign design;
     try {
         pid = Integer.parseInt(request.getParameter("pid"));
         if (pid == 0) {
@@ -65,7 +65,18 @@
     }
     //handle the theme
     Theme theme = Theme.getThemeById(design.getTheme());
-
+    //handle the designer
+    User designer = User.getUserById(design.getUid());
+    //处理点赞按钮
+    boolean self = false;
+    boolean logined = false;
+    boolean liked = LikeOp.liked(user.getUid(), pid);
+    if (user.getUid() != 0) {
+        logined = true;
+    }
+    if (designer.getUid() == user.getUid()) {
+        self = true;
+    }
 %>
 <!--导航-->
 <nav class="navbar navbar-default navbar-fixed-top" style="margin-bottom: 0">
@@ -86,14 +97,14 @@
                 </li>
             </ul>
             <%
-                if (user != null) {
+                if (user.getUid() != 0) {
             %>
             <div class="row nav navbar-nav navbar-right" style="margin-top:.4em">
 
                 <ul class="col-lg-3">
                     <li>
                         <button type="button" class="btn btn-default"
-                                onclick="window.location='usercenter_public.html';return false;">
+                                onclick="window.location='usercenter_public.jsp?uid=<%=user.getUid()%>';">
                             <span class="glyphicon glyphicon-user" aria-hidden="true"></span><%=user.getUsername()%>
                         </button>
                     </li>
@@ -103,14 +114,13 @@
             } else {
             %>
             <div class="row nav navbar-nav navbar-right" style="margin-top:.4em">
-
                 <div class="col-md-12">
                     <div class="col-md-3">
-                        <button type="button" class="btn btn-default" onclick="window.location='signup.jsp'">Signup
+                        <button type="button" class="btn btn-default" onclick="window.location='signup.jsp'">注册
                         </button>
                     </div>
                     <div class="col-md-3"></div>
-                    <button type="button" class="btn btn-default" onclick="window.location='login.jsp'">Login</button>
+                    <button type="button" class="btn btn-default" onclick="window.location='login.jsp'">登录</button>
                 </div>
             </div>
             <%
@@ -124,20 +134,32 @@
     <div class="row">
         <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
             <div class="row"
-                 style="background-color:rgba(211, 211, 211, 0.589);height:500px;box-shadow: lightgray 5px 5px 2px;padding:20px;">
+                 style="background-color:rgba(211, 211, 211, 0.589);height:550px;box-shadow: lightgray 5px 5px 2px;padding:20px;">
                 <!--图片详情一半-->
-                <div class="col-md-5">
+                <div class="col-md-5" style="height: 100%;padding-bottom: 20px;">
                     <img src="<%=design.getImg()%>" class="img-thumbnail" style="margin: 2em"/>
                     <br/>
                     <div class="container-fluid">
-                        <div class="row">
+                        <div class="row" data-pid="<%=pid%>">
                             <div class="col-md-5 col-md-offset-1" style="vertical-align: middle">
                                 <span class="glyphicon glyphicon-heart" style="color:red;"></span>
-                                <label class="like-count"><%=design.getCount()%></label>
+                                <label class="like-count"><%=design.getCount()%>
+                                </label>
                             </div>
+                            <!--不是自己才显示点赞按钮-->
+                            <%if (!self) {%>
                             <div class="col-md-5">
-                                <button class="btn btn-info">喜欢</button>
+                                <button class="btn btn-info"
+                                        <%if (!liked) {%>
+                                        onclick="like(<%=user.getUid()%>,<%=pid%>);"
+                                        <%}%>
+                                >
+                                    <span class="glyphicon glyphicon-heart"<%=liked ? "disabled=disabled" : ""%>></span>
+                                    <label><%=liked ? "已赞" : "点赞"%>
+                                    </label>
+                                </button>
                             </div>
+                            <%}%>
                         </div>
                     </div>
                 </div>
@@ -150,14 +172,17 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">作品名称：</label>
                                     <div class="col-sm-9">
-                                        <p class="form-control-static"><%=design.getName()%></p>
+                                        <p class="form-control-static"><%=design.getName()%>
+                                        </p>
                                     </div>
                                 </div>
                                 <!--作品分类行-->
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">作品分类：</label>
                                     <div class="col-sm-9">
-                                        <p class="form-control-static" data-themeid="<%=theme.getTid()%>"><%=theme.getName()%></p>
+                                        <a href="theme_detail.jsp?tid=<%=theme.getTid()%>" class="form-control-static"
+                                           data-themeid="<%=theme.getTid()%>"><%=theme.getName()%>
+                                        </a>
                                     </div>
                                 </div>
                                 <!--作品描述行-->
@@ -165,7 +190,23 @@
                                     <label class="col-sm-3 control-label">作品描述：</label>
                                     <div class="col-sm-9" style="text-overflow: ellipsis;">
                                         <p class="form-control-static">
-                                            <%=design.getDesp()%></p>
+                                            <%=design.getDesp()%>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">设计师：</label>
+                                    <div class="col-sm-9">
+                                        <a href="usercenter_public.jsp?uid=<%=designer.getUid()%>"
+                                           class="form-control-static"><%=designer.getUsername()%>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">发布时间：</label>
+                                    <div class="col-sm-9">
+                                        <p class="form-control-static"><%=design.getTime()%>
+                                        </p>
                                     </div>
                                 </div>
                             </form>
@@ -176,7 +217,6 @@
         </div>
     </div>
 </div>
-</div>
 <!--底部-->
 <div class="panel-footer text-center" id="footer">
     <h4>DesignTo服装设计服务平台</h4>
@@ -185,7 +225,7 @@
     </h5>
 </div>
 <!--引入 main.js-->
-<script src="web/static/js/main.js"></script>
+<script src="js/main.js"></script>
 </body>
 
 </html>

@@ -1,14 +1,14 @@
-<%@ page import="model.PublicDesign" %>
-<%@ page import="java.util.List" %>
 <%@ page import="model.User" %>
-<%@ page import="model.LikeOp" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="model.Theme" %><%--
   Created by IntelliJ IDEA.
   User: haoxingxiao
-  Date: 2018/5/25
-  Time: 02:05
+  Date: 2018/5/26
+  Time: 02:02
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -17,37 +17,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>首页</title>
+    <title>主题</title>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <style>
+        .near-box {
+            padding: 5px;
+        }
 
         .jumbotron {
             padding-bottom: 0;
         }
 
-        .big-header {
-            background-image: url(img/1.jpg);
-            background-size: 100% 100%;
-            height: 500px;
-            width: 100%;
-            color: white;
-
+        .info-box {
+            position: absolute;
+            width: 150px;
+            height: 3em;
+            padding: .5em;
+            left: 30px;
+            bottom: 60px;
+            display: block;
+            overflow: inherit;
+            background: rgba(0, 0, 0, .4);
         }
 
-        .liked {
-            color: red;
+        #header-box {
+            display: block;
+            position: relative;
         }
 
-        .header-txt {
-            left: 135px;
-            top: 150px;
+        .head {
             position: absolute;
             width: 80%;
-            padding: .5em;
             height: 3em;
+            padding: .5em;
+            left: 135px;
             display: block;
             font-size: 28pt;
+            top: 100px;
         }
 
         #footer {
@@ -55,11 +62,16 @@
 
         }
 
+        .thumbnail {
+            height: 260px;
+        }
+
     </style>
 </head>
 
 <body>
 <%
+    //handle cookie
     int uid = 0;
     User user = null;
     //读取 user 信息
@@ -72,8 +84,8 @@
     user = User.getUserById(uid);
 
 
-    //读取 top list
-    List<PublicDesign> list = PublicDesign.listTop(20);
+    //handle the theme list
+    List<Theme> themes = Theme.listTheme();
 %>
 <nav class="navbar navbar-default navbar-fixed-top" style="margin-bottom: 0">
     <div class="container-fluid">
@@ -82,10 +94,10 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active">
+                <li>
                     <a href="homepage.jsp">首页</a>
                 </li>
-                <li>
+                <li class="active">
                     <a href="theme.jsp">主题</a>
                 </li>
                 <li>
@@ -100,7 +112,7 @@
                 <ul class="col-lg-3">
                     <li>
                         <button type="button" class="btn btn-default"
-                                onclick="window.location='usercenter_public.jsp?uid=<%=user.getUid()%>';">
+                                onclick="window.location='usercenter_public.jsp?uid=<%=user.getUid()%>';return false;">
                             <span class="glyphicon glyphicon-user" aria-hidden="true"></span><%=user.getUsername()%>
                         </button>
                     </li>
@@ -127,71 +139,34 @@
     </div>
 </nav>
 <div class="jumbotron">
-    <div class="container-fluid big-header">
-        <div class="header-txt">
-            <label style="font-size:40pt;" class="h2">Hello,Designer!</label>
+    <div class="container-fluid" id="header-box"
+         style="background-image: url(img/1.jpg);background-size:100% 100%;height: 500px;width: 100%;">
+        <div class="head">
+            <label style="color: white;font-size:40pt;" class="h2">Hello,Designer!</label>
             <br/>
-            <label class="h4" style="font-size:25pt;">This is a place you can show your designs!</label>
+            <label style="color: white;font-size:25pt" class="h4">This is a place you can show your designs!</label>
             <br/>
         </div>
     </div>
+
 </div>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="container-fluid">
                 <div class="row">
-
                     <%
-                        for (PublicDesign design : list) {
-                            boolean liked = LikeOp.liked(uid, design.getPid());
+                        for (Theme theme : themes) {
                     %>
-                    <div class="col-md-3" data-pid="<%=design.getPid()%>">
+                    <div class="col-md-3 near-box">
                         <div class="thumbnail">
-                            <img src="<%=design.getImg()%>"
-                                 onclick="window.location='design_detail.jsp?pid=<%=design.getPid()%>'"
-                                 style="height:250px;">
-                            <div class="caption">
-                                <h3><%=design.getName()%>
-                                </h3>
-                                <p><%=design.getDesp()%>
+                            <div class="info-box">
+                                <p style="color: white;margin:0;" class="h3"><%=theme.getName()%>
                                 </p>
-                                <div class="row">
-                                    <div class=" col-md-5  col-md-offset-1">
-                                        <label>
-                                            <span class="glyphicon glyphicon-heart" style="color:red;"
-                                                  aria-hidden="true"></span>
-                                            <label class="like-count"><%=design.getCount()%>
-                                            </label>
-                                        </label>
-                                    </div>
-                                    <%if (user.getUid() != design.getUid()) {%>
-                                    <div class=" col-md-5">
-                                        <button onclick="
-                                            <%
-                                                if(user==null){
-                                                    %>
-                                                window.location='login.jsp'
-                                            <%
-                                                }else if(!liked){
-                                                    %>
-                                                like(<%=uid%>,<%=design.getPid()%>);
-                                            <%
-                                                }
-                                            %>
-                                                " class="btn btn-primary pull-right"
-                                                role="button" <%=liked ? "disabled='disabled'" : ""%>>
-                                            <span class="glyphicon glyphicon-heart
-                                                  <%=liked?"liked":""%>"
-                                                  aria-hidden="true"></span>
-                                            <label>
-                                                <%=liked ? "已赞" : "点赞"%>
-                                            </label>
-                                        </button>
-                                    </div>
-                                    <%}%>
-                                </div>
                             </div>
+                            <a href="theme_detail.jsp?tid=<%=theme.getTid()%>">
+                                <img src="<%=theme.getImg()%>" class="img-rounded" style="height: 100%;">
+                            </a>
                         </div>
                     </div>
                     <%
@@ -207,6 +182,7 @@
     <h5>Designer:
         <span class="glyphicon glyphicon-star" style="color: gold" aria-hidden="true"></span>Star</h5>
 </div>
+
 
 <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
 <script src="js/jquery.min.js"></script>

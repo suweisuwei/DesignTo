@@ -5,7 +5,7 @@
   Time: 00:44
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -42,51 +42,52 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active">
-                    <a href="homepage.html">首页</a>
+                    <a href="homepage.jsp">首页</a>
                 </li>
                 <li>
-                    <a href="theme.html">主题</a>
+                    <a href="theme.jsp">主题</a>
                 </li>
                 <li>
-                    <a href="custom.html">个性化</a>
+                    <a href="custom.jsp">个性化</a>
                 </li>
             </ul>
             <div class="row nav navbar-nav navbar-right" style="margin-top:.4em">
 
                 <div class="col-md-12">
                     <div class="col-md-3">
-                        <button type="button" class="btn btn-default">Signup</button>
+                        <button type="button" class="btn btn-default" onclick="window.location='signup.jsp'">注册</button>
                     </div>
                     <div class="col-md-3"></div>
-                    <button type="button" class="btn btn-defualt">Login</button>
+                    <button type="button" class="btn btn-default" onclick="window.location='login.jsp'">登录</button>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </nav>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <form class="form-horizontal" style="padding: 150px;" method="post" action="/login">
+            <form class="form-horizontal" style="padding: 150px;" method="post" action="login">
                 <div class="form-group">
                     <label for="inputUsername" class="col-sm-4 control-label">用户名</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control input-md" id="inputUsername" placeholder="请输入用户名" name="username">
+                        <input type="text" class="form-control input-md" id="inputUsername" placeholder="请输入用户名"
+                               name="username">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputPassword" class="col-sm-4 control-label">密码</label>
                     <div class="col-md-8">
 
-                        <input type="password" class="form-control input-md" id="inputPassword" placeholder="请输入密码" name="password">
+                        <input type="password" class="form-control input-md" id="inputPassword" placeholder="请输入密码"
+                               name="password">
 
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-sm-offset-4 col-sm-8">
-                        <button type="submit" class="btn btn-default btn-lg">Submit</button>
+                        <button type="submit" class="btn btn-default btn-lg">登录</button>
                     </div>
                 </div>
 
