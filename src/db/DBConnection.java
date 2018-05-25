@@ -21,7 +21,7 @@ public class DBConnection {
         prop.setProperty("password", PASSWORD);
         Connection con = null;
         try {
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/DesignTo", prop);
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/DesignTo?useUnicode=true&characterEncoding=utf8", prop);
         } catch (Exception e) {
             System.out.println("Error while connect:");
             e.printStackTrace();
@@ -57,9 +57,9 @@ public class DBConnection {
     public static boolean updateSql(String sql) throws SQLException{
         Connection con = getConnection();
         Statement statement = con.createStatement();
-        boolean result = statement.execute(sql);
-        statement.close();;
+        int result = statement.executeUpdate(sql);
+        statement.close();
         con.close();
-        return result;
+        return result>0;
     }
 }

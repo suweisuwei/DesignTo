@@ -1,5 +1,7 @@
 package model;
 
+import db.DBConnection;
+
 import java.sql.ResultSet;
 
 public class Theme {
@@ -7,6 +9,11 @@ public class Theme {
     private String name;
     private String img;
 
+    public Theme(){
+        tid = 0;
+        name = "未知";
+        img = "default.jpg";
+    }
     public Theme(ResultSet rs){
         try{
             setTid(rs.getInt(1));
@@ -39,5 +46,21 @@ public class Theme {
 
     public void setImg(String img) {
         this.img = img;
+    }
+
+
+    public static Theme getThemeById(int tid){
+        try{
+            ResultSet rs = DBConnection.querySql("select * from theme where tid = " + tid);
+            rs.next();
+            if(!rs.isAfterLast()){
+                return new Theme(rs);
+            }else{
+                return new Theme();
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            return new Theme();
+        }
     }
 }

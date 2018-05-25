@@ -34,8 +34,8 @@ public class LoginServlet extends HttpServlet {
         }
         //设置 cookie
         Cookie c = new Cookie("uid",""+u.getUid());
+        c.setMaxAge(1000*60*60);
         response.addCookie(c);
         MessageDispatcher.message(response,"success", "登录成功！", "/homepage.jsp");
-        return;
     }
 }
