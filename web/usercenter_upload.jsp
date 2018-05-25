@@ -72,7 +72,7 @@
     String publicCount = rs.getString(1);
     ResultSet rs2 = DBConnection.querySql("select sum(count) from public_design where uid = "+uid+";");
     rs2.next();
-    String likeCount = rs.getString(1);
+    String likeCount = rs2.getString(1);
     //读取主题列表
     ResultSet themeRs = DBConnection.querySql("select * from theme");
     List<Theme> themes = new LinkedList<>();
@@ -144,13 +144,13 @@
             <div class="row">
                 <ul class="nav nav-tabs">
                     <li role="presetation">
-                        <a href="usercenter_public.html">公开作品</a>
+                        <a href="usercenter_public.jsp">公开作品</a>
                     </li>
                     <li role="presetation" class="active">
-                        <a href="usercenter_upload.html">上传作品</a>
+                        <a href="usercenter_upload.jsp">上传作品</a>
                     </li>
                     <li role="presetation">
-                        <a href="usercenter_myrequire.html">我的需求</a>
+                        <a href="usercenter_myrequire.jsp">我的需求</a>
                     </li>
                     <li role="presetation">
                         <a href="#">我的服务</a>
@@ -166,14 +166,14 @@
                             <div class="form-group">
                                 <label for="design-name" class="col-md-3 control-label">作品名称：</label>
                                 <div class="col-md-7">
-                                    <input type="text" class="form-control" id="design-name" placeholder="" name="design-name">
+                                    <input type="text" class="form-control" id="design-name" placeholder="" name="name">
                                 </div>
                             </div>
                             <!-- 作品主题行 -->
                             <div class="form-group">
                                 <label for="design-theme" class="col-md-3 control-label">作品主题：</label>
                                 <div class="col-md-7">
-                                    <select class="form-control" id="design-theme" name="design-theme">
+                                    <select class="form-control" id="design-theme" name="theme">
                                         <%
                                             for(Theme t:themes){
 
@@ -189,14 +189,14 @@
                             <div class="form-group">
                                 <label for="design-story" class="col-md-3 control-label">作品故事：</label>
                                 <div class="col-md-7">
-                                    <textarea id="design-story" class="form-control" rows="5" placeholder="说出你的故事吧！" name="design-story"></textarea>
+                                    <textarea id="design-story" class="form-control" rows="5" placeholder="说出你的故事吧！" name="desp"></textarea>
                                 </div>
                             </div>
                             <!-- 上传文件行 -->
                             <div class="form-group">
                                 <label for="design-file" class="col-md-3 control-label">上传作品：</label>
                                 <div class="col-md-7">
-                                    <input type="file" class="form-control" id="design-file" name="design-file"/>
+                                    <input type="file" class="form-control" id="design-file" name="file"/>
                                 </div>
                             </div>
                             <!-- TODO 预览上传文件 -->

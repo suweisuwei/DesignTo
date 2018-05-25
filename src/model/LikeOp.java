@@ -1,5 +1,7 @@
 package model;
 
+import db.DBConnection;
+
 import java.sql.ResultSet;
 
 public class LikeOp {
@@ -28,5 +30,21 @@ public class LikeOp {
 
     public void setPid(int pid) {
         this.pid = pid;
+    }
+
+    public static boolean liked(int uid, int pid){
+        try {
+            ResultSet rs = DBConnection.querySql("select count(*) from like_op where uid =  " + uid + " and pid = " + pid + ";");
+            rs.next();
+            int count = rs.getInt(1);
+            if (count > 0) {
+                //已经存在该条记录。
+                return true;
+            }else{
+                return false;
+            }
+        }catch (Exception e){
+            return false;
+        }
     }
 }

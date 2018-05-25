@@ -1,11 +1,14 @@
-<%--
+<%@ page import="model.PublicDesign" %>
+<%@ page import="java.util.List" %>
+<%@ page import="model.User" %>
+<%@ page import="model.LikeOp" %><%--
   Created by IntelliJ IDEA.
   User: haoxingxiao
   Date: 2018/5/25
   Time: 02:05
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -18,9 +21,6 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .img-box {
-            margin-left: 10px;
-        }
 
         .jumbotron {
             padding-bottom: 0;
@@ -34,26 +34,47 @@
             color: white;
 
         }
-        .header-txt{
-            left:135px;
-            top:150px;
-            position: absolute;
-            width:80%;
-            padding:.5em;
-            height:3em;
-            display:block;
-            font-size:28pt;
+
+        .liked {
+            color: red;
         }
-        #footer{
-            width:100%;
+
+        .header-txt {
+            left: 135px;
+            top: 150px;
+            position: absolute;
+            width: 80%;
+            padding: .5em;
+            height: 3em;
+            display: block;
+            font-size: 28pt;
+        }
+
+        #footer {
+            width: 100%;
 
         }
+
     </style>
 </head>
 
 <body>
 <%
+    int uid = 0;
+    User user = null;
+    //读取 user 信息
+    Cookie[] cs = request.getCookies();
+    for (Cookie c : cs) {
+        if (c.getName().equals("uid")) {
+            uid = Integer.parseInt(c.getValue());
+        }
+    }
+    if (uid != 0) {
+        user = User.getUserById(uid);
+    }
 
+    //读取 top list
+    List<PublicDesign> list = PublicDesign.listTop(20);
 %>
 <nav class="navbar navbar-default navbar-fixed-top" style="margin-bottom: 0">
     <div class="container-fluid">
@@ -63,25 +84,46 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active">
-                    <a href="homepage.html">首页</a>
+                    <a href="homepage.jsp">首页</a>
                 </li>
                 <li>
-                    <a href="theme.html">主题</a>
+                    <a href="theme.jsp">主题</a>
                 </li>
                 <li>
-                    <a href="custom.html">个性化</a>
+                    <a href="custom.jsp">个性化</a>
                 </li>
             </ul>
-            <div class="row nav nabbar-nav navbar-right" style="margin-top:.4em">
+            <%
+                if (user != null) {
+            %>
+            <div class="row nav navbar-nav navbar-right" style="margin-top:.4em">
 
                 <ul class="col-lg-3">
                     <li>
-                        <button type="button" class="btn btn-defualt" onclick="window.location='usercenter_public.html';return false;">
-                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>User
+                        <button type="button" class="btn btn-default"
+                                onclick="window.location='usercenter_public.html';return false;">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span><%=user.getUsername()%>
                         </button>
                     </li>
                 </ul>
             </div>
+            <%
+            } else {
+            %>
+            <div class="row nav navbar-nav navbar-right" style="margin-top:.4em">
+
+                <div class="col-md-12">
+                    <div class="col-md-3">
+                        <button type="button" class="btn btn-default" onclick="window.location='signup.jsp'">Signup
+                        </button>
+                    </div>
+                    <div class="col-md-3"></div>
+                    <button type="button" class="btn btn-default" onclick="window.location='login.jsp'">Login</button>
+                </div>
+            </div>
+            <%
+                }
+            %>
         </div>
     </div>
 </nav>
@@ -89,9 +131,9 @@
     <div class="container-fluid big-header">
         <div class="header-txt">
             <label style="font-size:40pt;" class="h2">Hello,Designer!</label>
-            <br />
+            <br/>
             <label class="h4" style="font-size:25pt;">This is a palce you can show your designs!</label>
-            <br />
+            <br/>
         </div>
     </div>
 </div>
@@ -100,31 +142,61 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-3">
-                        <div class="thumbnail" >
-                            <img src="img/动图.gif"  onclick="window.location='design_detail.html';return false;">
+
+                    <%
+                        for (PublicDesign design : list) {
+                            boolean liked = LikeOp.liked(uid, design.getPid());
+                    %>
+                    <div class="col-md-3" data-pid="<%=design.getPid()%>">
+                        <div class="thumbnail">
+                            <img src="<%=design.getImg()%>"
+                                 onclick="window.location='design_detail.jsp?pid=<%=design.getPid()%>'"
+                                 style="height:250px;">
                             <div class="caption">
-                                <h3>Thumbnail label</h3>
-                                <p>...</p>
+                                <h3><%=design.getName()%>
+                                </h3>
+                                <p><%=design.getDesp()%>
+                                </p>
                                 <div class="row">
-                                    <p>
                                     <div class=" col-md-5  col-md-offset-1">
                                         <label>
-                                            <span class="glyphicon glyphicon-heart" style="color:red;" aria-hidden="true"></span>
-                                            <a href="#">1234</a>
+                                            <span class="glyphicon glyphicon-heart" style="color:red;"
+                                                  aria-hidden="true"></span>
+                                            <label class="like-count"><%=design.getCount()%>
+                                            </label>
                                         </label>
                                     </div>
 
                                     <div class=" col-md-5">
-                                        <a href="#" class="btn btn-primary pull-right" role="button">
-                                            <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>点赞</a>
+                                        <button onclick="
+                                            <%
+                                                if(user==null){
+                                                    %>
+                                                window.location='login.jsp'
+                                            <%
+                                                }else if(!liked){
+                                                    %>
+                                                like(<%=uid%>,<%=design.getPid()%>);
+                                            <%
+                                                }
+                                            %>
+                                                " class="btn btn-primary pull-right"
+                                                role="button" <%=liked ? "disabled='disabled'" : ""%>>
+                                            <span class="glyphicon glyphicon-heart
+                                                  <%=liked?"liked":""%>"
+                                                  aria-hidden="true"></span>
+                                            <label>
+                                                <%=liked ? "已赞" : "点赞"%>
+                                            </label>
+                                        </button>
                                     </div>
-                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+                    <%
+                        }
+                    %>
                 </div>
             </div>
         </div>
@@ -141,6 +213,26 @@
 <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
 <script src="js/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
+<script>
+    //TODO  like operation ajax
+    function like(uid, pid) {
+        $.get(
+            "/like",
+            {uid: uid, pid: pid},
+            function (data) {
+                if (data == 'true') {
+                    var count = $('[data-pid=' + pid + '] .like-count');
+                    var btn = $('[data-pid=' + pid + '] button')
+                    var num = parseInt(count.text());
+                    count.text(num + 1);
+                    btn.children("span").addClass("liked");
+                    btn.children("label").text("已赞");
+                    btn.attr("disabled", "disabled");
+                }
+            }
+        );
+    }
+</script>
 </body>
 
 </html>

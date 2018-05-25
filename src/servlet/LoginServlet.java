@@ -37,6 +37,5 @@ public class LoginServlet extends HttpServlet {
         c.setMaxAge(1000*60*60);
         response.addCookie(c);
         MessageDispatcher.message(response,"success", "登录成功！", "/homepage.jsp");
-        return;
     }
 }
