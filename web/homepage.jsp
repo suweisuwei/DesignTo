@@ -1,0 +1,146 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: haoxingxiao
+  Date: 2018/5/25
+  Time: 02:05
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>首页</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .img-box {
+            margin-left: 10px;
+        }
+
+        .jumbotron {
+            padding-bottom: 0;
+        }
+
+        .big-header {
+            background-image: url(img/1.jpg);
+            background-size: 100% 100%;
+            height: 500px;
+            width: 100%;
+            color: white;
+
+        }
+        .header-txt{
+            left:135px;
+            top:150px;
+            position: absolute;
+            width:80%;
+            padding:.5em;
+            height:3em;
+            display:block;
+            font-size:28pt;
+        }
+        #footer{
+            width:100%;
+
+        }
+    </style>
+</head>
+
+<body>
+<%
+
+%>
+<nav class="navbar navbar-default navbar-fixed-top" style="margin-bottom: 0">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#" style="color: blueviolet">DesignTo</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="homepage.html">首页</a>
+                </li>
+                <li>
+                    <a href="theme.html">主题</a>
+                </li>
+                <li>
+                    <a href="custom.html">个性化</a>
+                </li>
+            </ul>
+            <div class="row nav nabbar-nav navbar-right" style="margin-top:.4em">
+
+                <ul class="col-lg-3">
+                    <li>
+                        <button type="button" class="btn btn-defualt" onclick="window.location='usercenter_public.html';return false;">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>User
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="jumbotron">
+    <div class="container-fluid big-header">
+        <div class="header-txt">
+            <label style="font-size:40pt;" class="h2">Hello,Designer!</label>
+            <br />
+            <label class="h4" style="font-size:25pt;">This is a palce you can show your designs!</label>
+            <br />
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="thumbnail" >
+                            <img src="img/动图.gif"  onclick="window.location='design_detail.html';return false;">
+                            <div class="caption">
+                                <h3>Thumbnail label</h3>
+                                <p>...</p>
+                                <div class="row">
+                                    <p>
+                                    <div class=" col-md-5  col-md-offset-1">
+                                        <label>
+                                            <span class="glyphicon glyphicon-heart" style="color:red;" aria-hidden="true"></span>
+                                            <a href="#">1234</a>
+                                        </label>
+                                    </div>
+
+                                    <div class=" col-md-5">
+                                        <a href="#" class="btn btn-primary pull-right" role="button">
+                                            <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>点赞</a>
+                                    </div>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel-footer text-center" id="footer">
+    <h4>DesignTo服装设计服务平台</h4>
+    <h5>Designer:
+        <span class="glyphicon glyphicon-star" style="color: gold" aria-hidden="true"></span>Star</h5>
+</div>
+
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="js/jquery.min.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+
+</html>

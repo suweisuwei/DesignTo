@@ -66,7 +66,9 @@
                     <label for="inputUsername" class="col-sm-3 control-label">用户名</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control input-md" id="inputUsername" placeholder="请输入用户名" name="username">
+
                     </div>
+                    <span id="usernameInfo" style="position: absolute;right:-20px;"></span>
                 </div>
                 <div class="form-group">
                     <label for="inputPassword" class="col-sm-3 control-label">密码</label>
@@ -129,10 +131,33 @@
 
 
 <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
-<script src="web/static/js/jquery.min.js"></script>
+<script src="js/jquery.min.js"></script>
 <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
-<script src="web/static/js/bootstrap.min.js"></script>
-<script src="web/static/js/main.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+    $("#inputUsername").change(function (ev) {
+        var info = $("#usernameInfo");
+        info.text("…");
+
+        var username = $("#inputUsername").val();
+        $.get(
+            "/userexist",
+            {username:username},
+            function(data){
+                console.log("user exist:"+data);
+                console.log(data=="true");
+                if(data == "true"){
+                    info.text("❌");
+                    info.css("color","red");
+                }else{
+                    info.text("✔");
+                    info.css("color","green");
+                }
+            }
+        );
+    });
+</script>
 </body>
 
 </html>
