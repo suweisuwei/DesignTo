@@ -170,10 +170,8 @@ public class PublicDesign {
         List<PublicDesign> result = new LinkedList<>();
         try {
             ResultSet rs = DBConnection.querySql("select * from public_design order by count desc limit " + count + ";");
-            rs.next();
-            while (!rs.isAfterLast()) {
+            while (rs.next()) {
                 result.add(new PublicDesign(rs));
-                rs.next();
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -184,8 +182,7 @@ public class PublicDesign {
     public static PublicDesign getDesignById(int pid){
         try{
             ResultSet rs = DBConnection.querySql("select * from public_design where pid = " + pid);
-            rs.next();
-            if(!rs.isAfterLast()){
+            if(rs.next()){
                 return new PublicDesign(rs);
             }else{
                 return new PublicDesign();

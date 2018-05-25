@@ -77,7 +77,7 @@ public class SignupServlet extends HttpServlet {
                         String appendix = fileName.substring((fileName.lastIndexOf('.')), fileName.length());
                         headerName = username + appendix;
                         //上传文件以后的存储路径
-                        String path = request.getRealPath("/img/headers") + File.separatorChar + headerName;
+                        String path = request.getRealPath("/img/header") + File.separatorChar + headerName;
 
                         //上传文件
                         File uploaderFile = new File(path);
