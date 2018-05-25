@@ -7,6 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dda98ee6-777b-4e8b-8719-17c6cc8407b0" name="Default" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/src/servlet/LikeServlet.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/servlet/PublicUploadServlet.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/utils/Encoder.java" afterDir="false" />
@@ -27,6 +28,9 @@
       <change beforePath="$PROJECT_DIR$/web/signup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/signup.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/static/~$数据库设计表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/~$数据库设计表.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/usercenter_upload.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/usercenter_upload.jsp" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> 901e57f02306f3c13450b4ec146bfd4ddedafd19
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,6 +45,7 @@
       <file leaf-file-name="homepage.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/homepage.jsp">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="211">
               <caret line="152" column="76" selection-start-line="152" selection-start-column="76" selection-end-line="152" selection-end-column="76" />
               <folding>
@@ -57,11 +62,50 @@
               <caret line="23" selection-start-line="23" selection-end-line="23" />
               <folding>
                 <element signature="imports" expanded="true" />
+=======
+            <state relative-caret-position="117">
+              <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#343#344#0" expanded="true" />
+                <element signature="e#366#367#0" expanded="true" />
+                <element signature="e#857#858#0" expanded="true" />
+                <element signature="e#883#884#0" expanded="true" />
+                <element signature="e#918#919#0" expanded="true" />
+                <element signature="e#948#949#0" expanded="true" />
+                <element signature="e#983#984#0" expanded="true" />
+                <element signature="e#1014#1015#0" expanded="true" />
+                <element signature="e#1062#1063#0" expanded="true" />
+                <element signature="e#1102#1103#0" expanded="true" />
+                <element signature="e#1137#1138#0" expanded="true" />
+                <element signature="e#1168#1169#0" expanded="true" />
+                <element signature="e#1216#1217#0" expanded="true" />
+                <element signature="e#1256#1257#0" expanded="true" />
+                <element signature="e#1287#1288#0" expanded="true" />
+                <element signature="e#1314#1315#0" expanded="true" />
+                <element signature="e#1354#1355#0" expanded="true" />
+                <element signature="e#1386#1387#0" expanded="true" />
+                <element signature="e#1418#1419#0" expanded="true" />
+                <element signature="e#1446#1447#0" expanded="true" />
+                <element signature="e#1488#1489#0" expanded="true" />
+                <element signature="e#1522#1523#0" expanded="true" />
+                <element signature="e#1550#1551#0" expanded="true" />
+                <element signature="e#1576#1577#0" expanded="true" />
+                <element signature="e#1612#1613#0" expanded="true" />
+                <element signature="e#1642#1643#0" expanded="true" />
+                <element signature="e#1675#1676#0" expanded="true" />
+                <element signature="e#1704#1705#0" expanded="true" />
+                <element signature="e#1748#1749#0" expanded="true" />
+                <element signature="e#1784#1785#0" expanded="true" />
+                <element signature="e#2987#2988#0" expanded="true" />
+                <element signature="e#3062#3063#0" expanded="true" />
+>>>>>>> 901e57f02306f3c13450b4ec146bfd4ddedafd19
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="design_detail.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/design_detail.jsp">
           <provider selected="true" editor-type-id="text-editor">
@@ -79,15 +123,48 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="419">
               <caret line="54" column="101" selection-start-line="54" selection-start-column="101" selection-end-line="54" selection-end-column="101" />
+=======
+      <file leaf-file-name="SignupServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/servlet/SignupServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-262">
+              <caret line="50" column="31" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+>>>>>>> 901e57f02306f3c13450b4ec146bfd4ddedafd19
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="Theme.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/Theme.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="55">
               <caret line="34" column="27" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
+=======
+      <file leaf-file-name="DBConnection.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/db/DBConnection.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="158">
+              <caret line="13" selection-start-line="13" selection-end-line="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="docComment;method#getConnection#0;class#DBConnection#0" />
+                <element signature="docComment;method#querySql#0;class#DBConnection#0" />
+                <element signature="docComment;method#updateSql#0;class#DBConnection#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/servlet/LoginServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="174">
+              <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+>>>>>>> 901e57f02306f3c13450b4ec146bfd4ddedafd19
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#536#537#0" expanded="true" />
@@ -100,15 +177,21 @@
       <file leaf-file-name="PublicUploadServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/servlet/PublicUploadServlet.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="487">
               <caret line="91" selection-start-line="91" selection-end-line="91" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+=======
+            <state relative-caret-position="1458">
+              <caret line="81" column="45" selection-start-line="81" selection-start-column="45" selection-end-line="81" selection-end-column="45" />
+>>>>>>> 901e57f02306f3c13450b4ec146bfd4ddedafd19
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="PublicDesign.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/PublicDesign.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -126,10 +209,18 @@
                 <element signature="docComment;method#listPublicByUser#0;class#PublicDesign#0" />
                 <element signature="method#listPublicByUser#0;class#PublicDesign#0" />
               </folding>
+=======
+      <file leaf-file-name="signup.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/static/signup.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="114" column="62" lean-forward="true" selection-start-line="114" selection-start-column="62" selection-end-line="114" selection-end-column="62" />
+>>>>>>> 901e57f02306f3c13450b4ec146bfd4ddedafd19
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="LikeOp.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/LikeOp.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -138,6 +229,13 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+=======
+      <file leaf-file-name="homepage.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/static/homepage.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+>>>>>>> 901e57f02306f3c13450b4ec146bfd4ddedafd19
             </state>
           </provider>
         </entry>
@@ -145,6 +243,7 @@
       <file leaf-file-name="DBConnection.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/db/DBConnection.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="275">
               <caret line="59" selection-start-line="59" selection-end-line="59" />
               <folding>
@@ -165,6 +264,28 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+=======
+            <state relative-caret-position="648">
+              <caret line="36" column="43" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="43" />
+>>>>>>> 901e57f02306f3c13450b4ec146bfd4ddedafd19
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="signup.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/signup.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="305">
+              <caret line="132" column="36" selection-start-line="132" selection-start-column="36" selection-end-line="132" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="theme.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/static/theme.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="313">
+              <caret line="185" column="73" selection-start-line="185" selection-start-column="58" selection-end-line="185" selection-end-column="73" />
             </state>
           </provider>
         </entry>
@@ -197,7 +318,11 @@
         <option value="$PROJECT_DIR$/src/storage/FileSaver.java" />
         <option value="$PROJECT_DIR$/src/model/CustomDesign.java" />
         <option value="$PROJECT_DIR$/src/model/Require.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/model/User.java" />
+=======
+        <option value="$PROJECT_DIR$/src/model/Theme.java" />
+>>>>>>> 901e57f02306f3c13450b4ec146bfd4ddedafd19
         <option value="$PROJECT_DIR$/src/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/controller/PublicController.java" />
         <option value="$PROJECT_DIR$/src/servlet/Signup.java" />
@@ -220,6 +345,12 @@
         <option value="$PROJECT_DIR$/src/model/Theme.java" />
         <option value="$PROJECT_DIR$/web/design_detail.jsp" />
         <option value="$PROJECT_DIR$/web/signup.jsp" />
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/src/servlet/SignupServlet.java" />
+        <option value="$PROJECT_DIR$/src/db/DBConnection.java" />
+        <option value="$PROJECT_DIR$/src/model/User.java" />
+>>>>>>> 901e57f02306f3c13450b4ec146bfd4ddedafd19
       </list>
     </option>
   </component>
@@ -262,7 +393,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="Scope" />
+=======
+>>>>>>> 901e57f02306f3c13450b4ec146bfd4ddedafd19
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -363,6 +497,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -373,8 +509,12 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.27011493" />
+<<<<<<< HEAD
     <property name="settings.editor.selected.configurable" value="Errors" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/src/servlet/SignupServlet.java" />
+=======
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+>>>>>>> 901e57f02306f3c13450b4ec146bfd4ddedafd19
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -454,8 +594,13 @@
       <properties />
       <listeners />
     </configuration>
+<<<<<<< HEAD
     <configuration name="Tomcat 8.5.23" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.23" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/signup.jsp" />
+=======
+    <configuration name="Tomcat 8.5.23" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.31" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/login.jsp" />
+>>>>>>> 901e57f02306f3c13450b4ec146bfd4ddedafd19
       <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8" />
       <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
       <option name="UPDATING_POLICY" value="restart-server" />
@@ -556,12 +701,16 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="42579000" />
+=======
+    <option name="totallyTimeSpent" value="28018000" />
+>>>>>>> 901e57f02306f3c13450b4ec146bfd4ddedafd19
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
+<<<<<<< HEAD
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32923076" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
@@ -581,12 +730,58 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.39897436" />
+=======
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32923076" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info id="Capture Tool" />
+      <window_info id="Designer" order="2" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39897436" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32848486" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" />
+      <window_info anchor="bottom" id="Java Enterprise" order="7" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32848486" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32923076" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49847096" visible="true" weight="0.26323318" />
+      <window_info id="Web" order="2" sideWeight="0.50152904" side_tool="true" weight="0.25946277" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Web" order="2" sideWeight="0.50152904" side_tool="true" weight="0.25946277" />
+      <window_info id="Designer" order="2" />
+>>>>>>> 901e57f02306f3c13450b4ec146bfd4ddedafd19
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49847096" visible="true" weight="0.25946277" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32923076" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32923076" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32923076" />
+      <window_info anchor="bottom" id="Java Enterprise" order="7" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39897436" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32923076" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info id="Favorites" order="2" side_tool="true" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -648,7 +843,20 @@
           <properties />
           <option name="timeStamp" value="29" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/model/User.java</url>
+          <line>69</line>
+          <properties />
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/model/User.java</url>
+          <line>73</line>
+          <properties />
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
       </breakpoints>
+<<<<<<< HEAD
       <option name="time" value="33" />
     </breakpoint-manager>
   </component>
@@ -660,6 +868,55 @@
           <caret line="99" column="90" selection-start-line="99" selection-start-column="90" selection-end-line="99" selection-end-column="90" />
           <folding>
             <element signature="imports" expanded="true" />
+=======
+      <option name="time" value="24" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/servlet/MessageDispatcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="12" column="80" selection-start-line="12" selection-start-column="70" selection-end-line="12" selection-end-column="80" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/signup.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1134">
+          <caret line="63" column="115" selection-start-line="63" selection-start-column="106" selection-end-line="63" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/message.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="36" column="43" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlet/SignupServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1397">
+          <caret line="95" column="23" selection-start-line="95" selection-start-column="23" selection-end-line="95" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/db/DBConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#getConnection#0;class#DBConnection#0" />
+            <element signature="docComment;method#querySql#0;class#DBConnection#0" />
+            <element signature="docComment;method#updateSql#0;class#DBConnection#0" />
+>>>>>>> 901e57f02306f3c13450b4ec146bfd4ddedafd19
           </folding>
         </state>
       </provider>
@@ -677,8 +934,25 @@
           <caret line="149" column="119" selection-start-line="149" selection-start-column="119" selection-end-line="149" selection-end-column="119" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#343#344#0" expanded="true" />
+            <element signature="e#366#367#0" expanded="true" />
+            <element signature="e#857#858#0" expanded="true" />
+            <element signature="e#883#884#0" expanded="true" />
+            <element signature="e#918#919#0" expanded="true" />
+            <element signature="e#948#949#0" expanded="true" />
+            <element signature="e#983#984#0" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
+            <element signature="e#1062#1063#0" expanded="true" />
+            <element signature="e#1102#1103#0" expanded="true" />
+            <element signature="e#1137#1138#0" expanded="true" />
+            <element signature="e#1168#1169#0" expanded="true" />
+            <element signature="e#1216#1217#0" expanded="true" />
+            <element signature="e#1256#1257#0" expanded="true" />
+            <element signature="e#1287#1288#0" expanded="true" />
+            <element signature="e#1314#1315#0" expanded="true" />
             <element signature="e#1354#1355#0" expanded="true" />
             <element signature="e#1386#1387#0" expanded="true" />
+<<<<<<< HEAD
             <element signature="docComment;method#getOneUser#0;class#User#0" />
             <element signature="method#getOneUser#0;class#User#0" />
             <element signature="docComment;method#getMultiUser#0;class#User#0" />
@@ -705,11 +979,32 @@
             <element signature="docComment;method#likeOne#0;class#PublicDesign#0" />
             <element signature="docComment;method#listPublicByUser#0;class#PublicDesign#0" />
             <element signature="method#listPublicByUser#0;class#PublicDesign#0" />
+=======
+            <element signature="e#1418#1419#0" expanded="true" />
+            <element signature="e#1446#1447#0" expanded="true" />
+            <element signature="e#1488#1489#0" expanded="true" />
+            <element signature="e#1522#1523#0" expanded="true" />
+            <element signature="e#1550#1551#0" expanded="true" />
+            <element signature="e#1576#1577#0" expanded="true" />
+            <element signature="e#1612#1613#0" expanded="true" />
+            <element signature="e#1642#1643#0" expanded="true" />
+            <element signature="e#1675#1676#0" expanded="true" />
+            <element signature="e#1704#1705#0" expanded="true" />
+            <element signature="e#1748#1749#0" expanded="true" />
+            <element signature="e#1784#1785#0" expanded="true" />
+            <element signature="e#2987#2988#0" expanded="true" />
+            <element signature="e#3062#3063#0" expanded="true" />
+>>>>>>> 901e57f02306f3c13450b4ec146bfd4ddedafd19
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/model/LikeOp.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/controller/UserController.java" />
+    <entry file="file://$PROJECT_DIR$/web/signup.jsp">
+>>>>>>> 901e57f02306f3c13450b4ec146bfd4ddedafd19
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
@@ -741,6 +1036,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/db/DBConnection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="704">
@@ -757,6 +1053,10 @@
     <entry file="file://$PROJECT_DIR$/src/controller/UserController.java" />
     <entry file="file://$PROJECT_DIR$/src/storage/FileSaver.java" />
     <entry file="file://$PROJECT_DIR$/src/model/Require.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/controller/PublicController.java" />
+    <entry file="file://$PROJECT_DIR$/src/servlet/SignupServlet.java">
+>>>>>>> 901e57f02306f3c13450b4ec146bfd4ddedafd19
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="484">
           <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
@@ -801,15 +1101,38 @@
           <caret line="149" column="119" selection-start-line="149" selection-start-column="119" selection-end-line="149" selection-end-column="119" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#343#344#0" expanded="true" />
+            <element signature="e#366#367#0" expanded="true" />
+            <element signature="e#857#858#0" expanded="true" />
+            <element signature="e#883#884#0" expanded="true" />
+            <element signature="e#918#919#0" expanded="true" />
+            <element signature="e#948#949#0" expanded="true" />
+            <element signature="e#983#984#0" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
+            <element signature="e#1062#1063#0" expanded="true" />
+            <element signature="e#1102#1103#0" expanded="true" />
+            <element signature="e#1137#1138#0" expanded="true" />
+            <element signature="e#1168#1169#0" expanded="true" />
+            <element signature="e#1216#1217#0" expanded="true" />
+            <element signature="e#1256#1257#0" expanded="true" />
+            <element signature="e#1287#1288#0" expanded="true" />
+            <element signature="e#1314#1315#0" expanded="true" />
             <element signature="e#1354#1355#0" expanded="true" />
             <element signature="e#1386#1387#0" expanded="true" />
-            <element signature="docComment;method#getOneUser#0;class#User#0" />
-            <element signature="method#getOneUser#0;class#User#0" />
-            <element signature="docComment;method#getMultiUser#0;class#User#0" />
-            <element signature="method#getMultiUser#0;class#User#0" />
-            <element signature="docComment;method#getUserByName#0;class#User#0" />
-            <element signature="method#getUserByName#0;class#User#0" />
-            <element signature="docComment;method#getUserById#0;class#User#0" />
+            <element signature="e#1418#1419#0" expanded="true" />
+            <element signature="e#1446#1447#0" expanded="true" />
+            <element signature="e#1488#1489#0" expanded="true" />
+            <element signature="e#1522#1523#0" expanded="true" />
+            <element signature="e#1550#1551#0" expanded="true" />
+            <element signature="e#1576#1577#0" expanded="true" />
+            <element signature="e#1612#1613#0" expanded="true" />
+            <element signature="e#1642#1643#0" expanded="true" />
+            <element signature="e#1675#1676#0" expanded="true" />
+            <element signature="e#1704#1705#0" expanded="true" />
+            <element signature="e#1748#1749#0" expanded="true" />
+            <element signature="e#1784#1785#0" expanded="true" />
+            <element signature="e#2987#2988#0" expanded="true" />
+            <element signature="e#3062#3063#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -828,6 +1151,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/.idea/dictionaries/haoxingxiao.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -838,6 +1162,10 @@
     <entry file="file://$PROJECT_DIR$/src/controller/UserController.java" />
     <entry file="file://$PROJECT_DIR$/src/controller/PublicController.java" />
     <entry file="file://$PROJECT_DIR$/web/message.jsp">
+=======
+    <entry file="file://$PROJECT_DIR$/src/controller/PublicController.java" />
+    <entry file="file://$PROJECT_DIR$/src/model/CustomDesign.java">
+>>>>>>> 901e57f02306f3c13450b4ec146bfd4ddedafd19
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="268">
           <caret line="36" column="43" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="43" />
@@ -868,6 +1196,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/servlet/LoginServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="409">
@@ -879,6 +1208,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/servlet/CheckUsernameExist.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/controller/UserController.java" />
+    <entry file="file://$PROJECT_DIR$/src/storage/FileSaver.java" />
+    <entry file="file://$PROJECT_DIR$/src/model/PublicDesign.java">
+>>>>>>> 901e57f02306f3c13450b4ec146bfd4ddedafd19
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="82">
           <caret line="13" column="37" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="37" />
@@ -905,6 +1239,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/web/usercenter_public.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
@@ -917,6 +1252,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/usercenter_upload.jsp">
+=======
+    <entry file="file://$PROJECT_DIR$/src/model/CustomDesign.java">
+>>>>>>> 901e57f02306f3c13450b4ec146bfd4ddedafd19
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
           <caret line="152" column="52" selection-start-line="152" selection-start-column="52" selection-end-line="152" selection-end-column="52" />
@@ -937,6 +1275,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/web/static/design_detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -955,6 +1294,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="316">
           <caret line="39" column="18" lean-forward="true" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
+=======
+    <entry file="jar://$USER_HOME$/apps/apache-tomcat-8.5.23/lib/servlet-api.jar!/javax/servlet/http/HttpServlet.class" />
+    <entry file="file://$PROJECT_DIR$/src/servlet/Signup.java" />
+    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="65" />
+>>>>>>> 901e57f02306f3c13450b4ec146bfd4ddedafd19
         </state>
       </provider>
     </entry>
@@ -971,6 +1318,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/model/LikeOp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -995,22 +1343,60 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
           <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+=======
+    <entry file="jar://$USER_HOME$/apps/apache-tomcat-8.5.23/lib/servlet-api.jar!/javax/servlet/http/HttpServletResponse.class" />
+    <entry file="file://$PROJECT_DIR$/web/static/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="24" lean-forward="true" selection-end-line="103" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/dictionaries/haoxingxiao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="12" lean-forward="true" selection-end-line="6" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/UserController.java" />
+    <entry file="file://$PROJECT_DIR$/src/controller/PublicController.java" />
+    <entry file="file://$PROJECT_DIR$/web/message.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="36" column="43" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlet/MessageDispatcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="80" selection-start-line="12" selection-start-column="70" selection-end-line="12" selection-end-column="80" />
+>>>>>>> 901e57f02306f3c13450b4ec146bfd4ddedafd19
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/servlet/LikeServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="23" selection-start-line="23" selection-end-line="23" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/servlet/LoginServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+>>>>>>> 901e57f02306f3c13450b4ec146bfd4ddedafd19
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/model/PublicDesign.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="531">
@@ -1026,20 +1412,48 @@
             <element signature="docComment;method#likeOne#0;class#PublicDesign#0" />
             <element signature="docComment;method#listPublicByUser#0;class#PublicDesign#0" />
             <element signature="method#listPublicByUser#0;class#PublicDesign#0" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/servlet/SignupServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-262">
+          <caret line="50" column="31" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+>>>>>>> 901e57f02306f3c13450b4ec146bfd4ddedafd19
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/web/homepage.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="211">
           <caret line="152" column="76" selection-start-line="152" selection-start-column="76" selection-end-line="152" selection-end-column="76" />
           <folding>
             <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/web/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1458">
+          <caret line="81" column="45" selection-start-line="81" selection-start-column="45" selection-end-line="81" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/db/DBConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="13" selection-start-line="13" selection-end-line="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#getConnection#0;class#DBConnection#0" />
+            <element signature="docComment;method#querySql#0;class#DBConnection#0" />
+            <element signature="docComment;method#updateSql#0;class#DBConnection#0" />
+>>>>>>> 901e57f02306f3c13450b4ec146bfd4ddedafd19
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/model/Theme.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="55">
@@ -1048,10 +1462,51 @@
             <element signature="imports" expanded="true" />
             <element signature="e#536#537#0" expanded="true" />
             <element signature="e#563#564#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#343#344#0" expanded="true" />
+            <element signature="e#366#367#0" expanded="true" />
+            <element signature="e#857#858#0" expanded="true" />
+            <element signature="e#883#884#0" expanded="true" />
+            <element signature="e#918#919#0" expanded="true" />
+            <element signature="e#948#949#0" expanded="true" />
+            <element signature="e#983#984#0" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
+            <element signature="e#1062#1063#0" expanded="true" />
+            <element signature="e#1102#1103#0" expanded="true" />
+            <element signature="e#1137#1138#0" expanded="true" />
+            <element signature="e#1168#1169#0" expanded="true" />
+            <element signature="e#1216#1217#0" expanded="true" />
+            <element signature="e#1256#1257#0" expanded="true" />
+            <element signature="e#1287#1288#0" expanded="true" />
+            <element signature="e#1314#1315#0" expanded="true" />
+            <element signature="e#1354#1355#0" expanded="true" />
+            <element signature="e#1386#1387#0" expanded="true" />
+            <element signature="e#1418#1419#0" expanded="true" />
+            <element signature="e#1446#1447#0" expanded="true" />
+            <element signature="e#1488#1489#0" expanded="true" />
+            <element signature="e#1522#1523#0" expanded="true" />
+            <element signature="e#1550#1551#0" expanded="true" />
+            <element signature="e#1576#1577#0" expanded="true" />
+            <element signature="e#1612#1613#0" expanded="true" />
+            <element signature="e#1642#1643#0" expanded="true" />
+            <element signature="e#1675#1676#0" expanded="true" />
+            <element signature="e#1704#1705#0" expanded="true" />
+            <element signature="e#1748#1749#0" expanded="true" />
+            <element signature="e#1784#1785#0" expanded="true" />
+            <element signature="e#2987#2988#0" expanded="true" />
+            <element signature="e#3062#3063#0" expanded="true" />
+>>>>>>> 901e57f02306f3c13450b4ec146bfd4ddedafd19
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/web/design_detail.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
@@ -1066,6 +1521,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="419">
           <caret line="54" column="101" selection-start-line="54" selection-start-column="101" selection-end-line="54" selection-end-column="101" />
+=======
+    <entry file="file://$PROJECT_DIR$/web/static/homepage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/signup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="114" column="62" lean-forward="true" selection-start-line="114" selection-start-column="62" selection-end-line="114" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/signup.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="132" column="36" selection-start-line="132" selection-start-column="36" selection-end-line="132" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/theme.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="185" column="73" selection-start-line="185" selection-start-column="58" selection-end-line="185" selection-end-column="73" />
+>>>>>>> 901e57f02306f3c13450b4ec146bfd4ddedafd19
         </state>
       </provider>
     </entry>

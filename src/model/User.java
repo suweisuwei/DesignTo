@@ -33,7 +33,6 @@ public class User {
         }catch (Exception e){
             uid = 0;
         }
-
     }
     public int getUid() {
         return uid;
