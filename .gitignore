@@ -6,3 +6,4 @@
 src/db/DBConnection.java
 .DS_Store
 .idea/workspace.xml
+*.xml

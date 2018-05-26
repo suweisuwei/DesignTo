@@ -1,4 +1,9 @@
-<%@ page import="model.User" %><%--
+<%@ page import="model.User" %>
+<%@ page import="model.Theme" %>
+<%@ page import="servlet.MessageDispatcher" %>
+<%@ page import="model.PublicDesign" %>
+<%@ page import="java.util.List" %>
+<%@ page import="model.LikeOp" %><%--
   Created by IntelliJ IDEA.
   User: haoxingxiao
   Date: 2018/5/26
@@ -17,6 +22,19 @@
         }
     }
     user = User.getUserById(uid);
+
+    //handle the theme
+    int tid = 0;
+    try {
+        tid = Integer.parseInt(request.getParameter("tid"));
+    } catch (Exception e) {
+    }
+    if (tid == 0) {
+        MessageDispatcher.message(response, "danger", "主题不存在！", "homepage.jsp");
+    }
+    Theme theme = Theme.getThemeById(tid);
+    //handle the design
+    List<PublicDesign> designs = PublicDesign.getDesignByTheme(tid);
 %>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -24,7 +42,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><%=theme%>></title>
+    <title><%=theme.getName()%>主题</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <style>
         .img-box {
@@ -36,7 +54,7 @@
         }
 
         .big-header {
-            background-image: url(img/3.jpg);
+            background-image: url(img/1.jpg);
             filter: blur(10px);
             background-size: 100% 100%;
             height: 500px;
@@ -44,33 +62,36 @@
             color: white;
 
         }
-        .header-txt{
+
+        .header-txt {
             text-align: center;
-            left:10%;
-            top:380px;
+            left: 10%;
+            top: 380px;
             position: absolute;
-            width:80%;
-            padding:.5em;
-            height:3em;
-            display:block;
-            font-size:28pt;
-            font-family:Arial, Helvetica, sans-serif;
-            color:rgb(250, 249, 250);
+            width: 80%;
+            padding: .5em;
+            height: 3em;
+            display: block;
+            font-size: 28pt;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(250, 249, 250);
         }
-        .header-img{
+
+        .header-img {
 
             text-align: center;
-            left:10%;
-            top:150px;
+            left: 10%;
+            top: 150px;
             position: absolute;
-            width:80%;
-            padding:.5em;
-            height:220px;
-            display:block;
+            width: 80%;
+            padding: .5em;
+            height: 220px;
+            display: block;
 
         }
-        #footer{
-            width:100%;
+
+        #footer {
+            width: 100%;
 
         }
     </style>
@@ -84,21 +105,22 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li >
-                    <a href="homepage.html">首页</a>
+                <li>
+                    <a href="homepage.jsp">首页</a>
                 </li>
                 <li class="active">
-                    <a href="theme.html">主题</a>
+                    <a href="theme.jsp">主题</a>
                 </li>
                 <li>
-                    <a href="custom.html">个性化</a>
+                    <a href="custom.jsp">个性化</a>
                 </li>
             </ul>
-            <div class="row nav nabbar-nav navbar-right" style="margin-top:.4em">
+            <div class="row nav navbar-nav navbar-right" style="margin-top:.4em">
 
                 <ul class="col-lg-3">
                     <li>
-                        <button type="button" class="btn btn-defualt" onclick="window.location='usercenter_public.html';return false;">
+                        <button type="button" class="btn btn-default"
+                                onclick="window.location='usercenter_public.html';return false;">
                             <span class="glyphicon glyphicon-user" aria-hidden="true"></span>User
                         </button>
                     </li>
@@ -112,10 +134,11 @@
 
     </div>
     <div class="header-img">
-        <img src="手稿图/婚纱/手稿72.jpg" class="img-rounded" style="height: 100%;">
+        <img src="<%=theme.getImg()%>" class="img-rounded" style="height: 100%;">
     </div>
     <div class="header-txt">
-        <label style="font-size:40pt;" class="h2">婚纱</label>
+        <label style="font-size:40pt;" class="h2"><%=theme.getName()%>
+        </label>
     </div>
 </div>
 <div class="container-fluid">
@@ -123,198 +146,61 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="container-fluid">
                 <div class="row">
+                    <%
+                        for (PublicDesign design : designs) {
+                            boolean liked = LikeOp.liked(uid, design.getPid());
+                    %>
                     <div class="col-md-3">
-                        <div class="thumbnail" >
-                            <img src="img/动图.gif"  onclick="window.location='design_detail.html';return false;">
+                        <div class="thumbnail">
+                            <img src="<%=design.getImg()%>"
+                                 onclick="window.location='design_detail.jsp?pid=<%=design.getPid()%>'"
+                                 style="height:250px;"
+                            >
                             <div class="caption">
-                                <h3>Thumbnail label</h3>
-                                <p>...</p>
+                                <h3><%=design.getName()%>
+                                </h3>
+                                <p><%=design.getDesp()%>
+                                </p>
                                 <div class="row">
-                                    <p>
                                     <div class=" col-md-5  col-md-offset-1">
                                         <label>
-                                            <span class="glyphicon glyphicon-heart" style="color:red;" aria-hidden="true"></span>
-                                            <a href="#">1234</a>
+                                            <span class="glyphicon glyphicon-heart" style="color:red;"
+                                                  aria-hidden="true"></span>
+                                            <a href="#"><%=design.getCount()%>
+                                            </a>
                                         </label>
                                     </div>
-
+                                    <%if (user.getUid() != design.getUid()) {%>
                                     <div class=" col-md-5">
-                                        <a href="#" class="btn btn-primary pull-right" role="button">
-                                            <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>点赞</a>
+                                        <button onclick="
+                                            <%
+                                                if(user.getUid() == 0){
+                                                    %>
+                                                window.location='login.jsp'
+                                            <%
+                                                }else if(!liked){
+                                                    %>
+                                                like(<%=uid%>,<%=design.getPid()%>);
+                                            <%
+                                                }
+                                            %>
+                                                " class="btn btn-primary pull-right"
+                                                role="button" <%=liked ? "disabled='disabled'" : ""%>>
+                                            <span class="glyphicon glyphicon-heart
+                                                  <%=liked?"liked":""%>"
+                                                  aria-hidden="true"></span>
+                                            <label>
+                                                <%=liked ? "已赞" : "点赞"%>
+                                            </label>
+                                        </button>
                                     </div>
-                                    </p>
+                                    <%}%>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="thumbnail">
-                            <img src="img/动图.gif" alt="...">
-                            <div class="caption">
-                                <h3>Thumbnail label</h3>
-                                <p>...</p>
-                                <div class="row">
-                                    <p>
-                                    <div class=" col-md-5  col-md-offset-1">
-                                        <label>
-                                            <span class="glyphicon glyphicon-heart" style="color:red;" aria-hidden="true"></span>
-                                            <a href="#">1234</a>
-                                        </label>
-                                    </div>
+                    <%}%>
 
-                                    <div class=" col-md-5">
-                                        <a href="#" class="btn btn-primary pull-right" role="button">
-                                            <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>点赞</a>
-                                    </div>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="thumbnail">
-                            <img src="img/动图.gif" alt="...">
-                            <div class="caption">
-                                <h3>Thumbnail label</h3>
-                                <p>...</p>
-                                <div class="row">
-                                    <p>
-                                    <div class=" col-md-5  col-md-offset-1">
-                                        <label>
-                                            <span class="glyphicon glyphicon-heart" style="color:red;" aria-hidden="true"></span>
-                                            <a href="#">1234</a>
-                                        </label>
-                                    </div>
-
-                                    <div class=" col-md-5">
-                                        <a href="#" class="btn btn-primary pull-right" role="button">
-                                            <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>点赞</a>
-                                    </div>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="thumbnail">
-                            <img src="img/动图.gif" alt="...">
-                            <div class="caption">
-                                <h3>Thumbnail label</h3>
-                                <p>...</p>
-                                <div class="row">
-                                    <p>
-                                    <div class=" col-md-5  col-md-offset-1">
-                                        <label>
-                                            <span class="glyphicon glyphicon-heart" style="color:red;" aria-hidden="true"></span>
-                                            <a href="#">1234</a>
-                                        </label>
-                                    </div>
-
-                                    <div class=" col-md-5">
-                                        <a href="#" class="btn btn-primary pull-right" role="button">
-                                            <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>点赞</a>
-                                    </div>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="thumbnail">
-                            <img src="img/动图.gif" alt="...">
-                            <div class="caption">
-                                <h3>Thumbnail label</h3>
-                                <p>...</p>
-                                <div class="row">
-                                    <p>
-                                    <div class=" col-md-5  col-md-offset-1">
-                                        <label>
-                                            <span class="glyphicon glyphicon-heart" style="color:red;" aria-hidden="true"></span>
-                                            <a href="#">1234</a>
-                                        </label>
-                                    </div>
-
-                                    <div class=" col-md-5">
-                                        <a href="#" class="btn btn-primary pull-right" role="button">
-                                            <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>点赞</a>
-                                    </div>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="thumbnail">
-                            <img src="img/动图.gif" alt="...">
-                            <div class="caption">
-                                <h3>Thumbnail label</h3>
-                                <p>...</p>
-                                <div class="row">
-                                    <p>
-                                    <div class="col-md-5  col-md-offset-1">
-                                        <label>
-                                            <span class="glyphicon glyphicon-heart" style="color:red;" aria-hidden="true"></span>
-                                            <a href="#">1234</a>
-                                        </label>
-                                    </div>
-
-                                    <div class="col-md-5">
-                                        <a href="#" class="btn btn-primary pull-right" role="button">
-                                            <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>点赞</a>
-                                    </div>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="thumbnail">
-                            <img src="img/动图.gif" alt="...">
-                            <div class="caption">
-                                <h3>Thumbnail label</h3>
-                                <p>...</p>
-                                <div class="row">
-                                    <p>
-                                    <div class="col-md-5  col-md-offset-1">
-                                        <label>
-                                            <span class="glyphicon glyphicon-heart" style="color:red;" aria-hidden="true"></span>
-                                            <a href="#">1234</a>
-                                        </label>
-                                    </div>
-
-                                    <div class="col-md-5">
-                                        <a href="#" class="btn btn-primary pull-right" role="button">
-                                            <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>点赞</a>
-                                    </div>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="thumbnail">
-                            <img src="img/动图.gif" alt="...">
-                            <div class="caption">
-                                <h3>Thumbnail label</h3>
-                                <p>...</p>
-                                <div class="row">
-                                    <p>
-                                    <div class="col-md-5  col-md-offset-1">
-                                        <label>
-                                            <span class="glyphicon glyphicon-heart" style="color:red;" aria-hidden="true"></span>
-                                            <a href="#">1234</a>
-                                        </label>
-                                    </div>
-
-                                    <div class="col-md-5">
-                                        <a href="#" class="btn btn-primary pull-right" role="button">
-                                            <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>点赞</a>
-                                    </div>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -327,10 +213,10 @@
 </div>
 
 <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
-<script src="web/static/js/jquery.min.js"></script>
+<script src="js/jquery.min.js"></script>
 <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
-<script src="web/static/js/bootstrap.min.js"></script>
-<script src="web/static/js/main.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
 </body>
 
 </html>

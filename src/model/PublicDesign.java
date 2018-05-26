@@ -19,9 +19,10 @@ public class PublicDesign {
     private int count;
     private int uid;
 
-    public PublicDesign(){
+    public PublicDesign() {
         pid = 0;
     }
+
     public PublicDesign(ResultSet rs) {
         try {
             setPid(rs.getInt(1));
@@ -132,12 +133,12 @@ public class PublicDesign {
      */
     public static boolean likeOne(int pid, int uid) {
         try {
-            if(LikeOp.liked(uid, pid)){
+            if (LikeOp.liked(uid, pid)) {
                 return false;
             }
             boolean result1 = DBConnection.updateSql("update public_design set count = count + 1 where pid = " + pid + ";");
             boolean result2 = DBConnection.updateSql("insert into like_op values(" + uid + "," + pid + ");");
-            return result1&&result2;
+            return result1 && result2;
         } catch (Exception e) {
             e.printStackTrace();
             return false;
@@ -179,17 +180,30 @@ public class PublicDesign {
         return result;
     }
 
-    public static PublicDesign getDesignById(int pid){
-        try{
+    public static PublicDesign getDesignById(int pid) {
+        try {
             ResultSet rs = DBConnection.querySql("select * from public_design where pid = " + pid);
-            if(rs.next()){
+            if (rs.next()) {
                 return new PublicDesign(rs);
-            }else{
+            } else {
                 return new PublicDesign();
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return new PublicDesign();
         }
+    }
+
+    public static List<PublicDesign> getDesignByTheme(int tid) {
+        List<PublicDesign> result = new LinkedList<>();
+        try {
+            ResultSet rs = DBConnection.querySql("select * from public_design where theme = " + tid + ";");
+            while (rs.next()) {
+                result.add(new PublicDesign(rs));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
     }
 }

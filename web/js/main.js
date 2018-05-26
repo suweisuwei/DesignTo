@@ -8,7 +8,7 @@ function justifyFooter(){
     var footer = $("#footer");
     var dist = $("#footer")[0].offsetTop;
     var h = window.innerHeight;
-    if(dist < h){
+    if(dist < h + 200){
         footer.css("position","fixed");
         footer.css("bottom","0");
     }else{

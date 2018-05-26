@@ -9,6 +9,22 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
+<%
+    int uid = 0;
+    User user;
+    //读取 user 信息
+    Cookie[] cs = request.getCookies();
+    for (Cookie c : cs) {
+        if (c.getName().equals("uid")) {
+            uid = Integer.parseInt(c.getValue());
+        }
+    }
+    user = User.getUserById(uid);
+
+
+    //读取 top list
+    List<PublicDesign> list = PublicDesign.listTop(20);
+%>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -59,22 +75,6 @@
 </head>
 
 <body>
-<%
-    int uid = 0;
-    User user = null;
-    //读取 user 信息
-    Cookie[] cs = request.getCookies();
-    for (Cookie c : cs) {
-        if (c.getName().equals("uid")) {
-            uid = Integer.parseInt(c.getValue());
-        }
-    }
-    user = User.getUserById(uid);
-
-
-    //读取 top list
-    List<PublicDesign> list = PublicDesign.listTop(20);
-%>
 <nav class="navbar navbar-default navbar-fixed-top" style="margin-bottom: 0">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -169,7 +169,7 @@
                                     <div class=" col-md-5">
                                         <button onclick="
                                             <%
-                                                if(user==null){
+                                                if(user.getUid() == 0){
                                                     %>
                                                 window.location='login.jsp'
                                             <%

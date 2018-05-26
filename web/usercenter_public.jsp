@@ -3,7 +3,8 @@
 <%@ page import="servlet.MessageDispatcher" %>
 <%@ page import="model.User" %>
 <%@ page import="java.sql.ResultSet" %>
-<%@ page import="db.DBConnection" %><%--
+<%@ page import="db.DBConnection" %>
+<%@ page import="model.LikeOp" %><%--
   Created by IntelliJ IDEA.
   User: haoxingxiao
   Date: 2018/5/25
@@ -67,20 +68,21 @@
         MessageDispatcher.message(response, "warning", "登录超时！请重新登录！", "login.jsp");
         return;
     }
-    if (owner == 0 || uid == owner) {
+    if (uid == owner) {
         self = true;
     }
-    User user = User.getUserById(uid);
+    User visitor = User.getUserById(owner);
+    User hoster = User.getUserById(uid);
     char sex;
-    if (user.getSex() == 'M') {
+    if (hoster.getSex() == 'M') {
         sex = '♂';
-    } else if (user.getSex() == 'F') {
+    } else if (hoster.getSex() == 'F') {
         sex = '♀';
     } else {
         sex = '?';
     }
-    int publicCount = User.getUserDesignCount(user.getUid());
-    int likeCount = User.getUserLikeCount(user.getUid());
+    int publicCount = User.getUserDesignCount(hoster.getUid());
+    int likeCount = User.getUserLikeCount(hoster.getUid());
     List<PublicDesign> list = PublicDesign.listPublicByUser(uid);
 %>
 <!--导航-->
@@ -101,16 +103,39 @@
                     <a href="custom.jsp">个性化</a>
                 </li>
             </ul>
+            <%
+                if (visitor.getUid() != 0) {    //已登录
+            %>
+            <div class="row nav navbar-nav navbar-right" style="margin-top:.4em">
+                <div class="col-md-12">
+                    <div class="col-md-3">
+                        <button type="button" class="btn btn-default"
+                                onclick="window.location='usercenter_public.jsp?uid=<%=visitor.getUid()%>';">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span><%=visitor.getUsername()%>
+                        </button>
+                    </div>
+                    <div class="col-md-3">
+                        <button type="button" class="btn btn-default" onclick="window.location='logout'">退出</button>
+                    </div>
+                </div>
+            </div>
+            <%
+            } else {        //未登录
+            %>
             <div class="row nav navbar-nav navbar-right" style="margin-top:.4em">
 
-                <ul class="col-lg-3">
-                    <li>
-                        <button type="button" class="btn btn-default">
-                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span><%=user.getUsername()%>
+                <div class="col-md-12">
+                    <div class="col-md-3">
+                        <button type="button" class="btn btn-default" onclick="window.location='signup.jsp'">注册
                         </button>
-                    </li>
-                </ul>
+                    </div>
+                    <div class="col-md-3"></div>
+                    <button type="button" class="btn btn-default" onclick="window.location='login.jsp'">登录</button>
+                </div>
             </div>
+            <%
+                }
+            %>
         </div>
     </div>
 </nav>
@@ -120,10 +145,10 @@
         <div class="col-md-8 col-md-offset-2">
             <!--个人信息栏-->
             <div id="user-info-row" class="row">
-                <img src="<%=user.getHeader()%>" style="float:left;width:150px;height:150px;" class="img-thumbnail"
+                <img src="<%=hoster.getHeader()%>" style="float:left;width:150px;height:150px;" class="img-thumbnail"
                      alt="头像"/>
                 <div class="col-md-6">
-                    <label class="h4" id="username"><%=user.getUsername()%>
+                    <label class="h4" id="username"><%=hoster.getUsername()%>
                     </label>
                     <span class="sex" style="color:#99ccff"><%=sex%></span>
                     <br/>
@@ -131,17 +156,17 @@
                         <label class="red"><%=publicCount%>
                         </label>次作品，共获得
                         <label class="red"><%=likeCount%>
-                        </label>个赞
+                        </label>个赞。
                     </label>
                     <br/>
                     <label>联系邮箱：
-                        <a href="mailto:<%=user.getEmail()%>"><%=user.getEmail()%>
+                        <a href="mailto:<%=hoster.getEmail()%>"><%=hoster.getEmail()%>
                         </a>
                     </label>
                     <br/>
-                    <label>联系电话：</label>
-                    <a href="#"><%=user.getTele()%>
-                    </a>
+                    <label>联系电话：
+                        <a href="#"><%=hoster.getTele()%>
+                        </a>
                     </label>
                 </div>
             </div>
@@ -161,7 +186,7 @@
                     </li>
                     <%if (self) {%>
                     <li role="presentation">
-                        <a href="usercenter_custom.jsp?uid=<%=owner%>">我的服务</a>
+                        <a href="usercenter_mycustom.jsp?uid=<%=owner%>">我的服务</a>
                     </li>
                     <%}%>
                 </ul>
@@ -173,9 +198,11 @@
                         <!-- list of the pieces -->
                         <%
                             for (PublicDesign design : list) {
+                                boolean liked = LikeOp.liked(visitor.getUid(), design.getPid());
                         %>
                         <div class="col-md-3 col-xs-6 col-sm-4">
-                            <div class="thumbnail" onclick="window.location='design_detail.jsp?pid=<%=design.getPid()%>'" >
+                            <div class="thumbnail"
+                                 onclick="window.location='design_detail.jsp?pid=<%=design.getPid()%>'">
                                 <img style="height:200px;" src="<%=design.getImg()%>" alt="...">
                                 <div class="caption">
                                     <h3><%=design.getName()%>
@@ -192,10 +219,29 @@
                                                 </a>
                                             </label>
                                         </div>
-                                        <%if (!self) {%>
-                                        <div class="col-md-5">
-                                            <a href="#" class="btn btn-primary pull-right" role="button">
-                                                <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>点赞</a>
+                                        <%if (visitor.getUid() != design.getUid()) {%>
+                                        <div class=" col-md-5">
+                                            <button onclick="
+                                                <%
+                                                if(visitor.getUid() == 0){
+                                                    %>
+                                                    window.location='login.jsp'
+                                                <%
+                                                }else if(!liked){
+                                                    %>
+                                                    like(<%=uid%>,<%=design.getPid()%>);
+                                                <%
+                                                }
+                                            %>
+                                                    " class="btn btn-primary pull-right"
+                                                    role="button" <%=liked ? "disabled='disabled'" : ""%>>
+                                            <span class="glyphicon glyphicon-heart
+                                                  <%=liked?"liked":""%>"
+                                                  aria-hidden="true"></span>
+                                                <label>
+                                                    <%=liked ? "已赞" : "点赞"%>
+                                                </label>
+                                            </button>
                                         </div>
                                         <%}%>
                                     </div>
