@@ -54,8 +54,7 @@ public class Theme {
     public static Theme getThemeById(int tid){
         try{
             ResultSet rs = DBConnection.querySql("select * from theme where tid = " + tid);
-            rs.next();
-            if(!rs.isAfterLast()){
+            if(rs.next()){
                 return new Theme(rs);
             }else{
                 return new Theme();
@@ -70,10 +69,8 @@ public class Theme {
         List<Theme> result = new LinkedList<>();
         try{
             ResultSet rs = DBConnection.querySql("select * from theme");
-            rs.next();
-            while(!rs.isAfterLast()){
+            while(rs.next()){
                 result.add(new Theme(rs));
-                rs.next();
             }
         }catch (Exception e){
             e.printStackTrace();

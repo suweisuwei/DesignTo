@@ -91,12 +91,12 @@ public class PublicUploadServlet extends HttpServlet {
                 //insert db
                 boolean result = model.PublicDesign.addOne(name, tid, desp, time, "/img/public/" + img, uid);
                 if (result) {
-                    MessageDispatcher.message(response, "success", "发布成功！", "usercenter_public.jsp");
+                    MessageDispatcher.message(response, "success", "发布成功！", "usercenter_public.jsp?uid="+uid);
                 } else {
-                    MessageDispatcher.message(response, "danger", "发布失败！请重新尝试！", "usercenter_upload.jsp");
+                    MessageDispatcher.message(response, "danger", "发布失败！请重新尝试！", "usercenter_upload.jsp?uid="+uid);
                 }
             } catch (Exception e) {
-                MessageDispatcher.message(response, "danger", e.getMessage(), "usercenter_upload.jsp");
+                MessageDispatcher.message(response, "danger", e.getMessage(), "usercenter_upload.jsp?uid="+uid);
             }
         }
 

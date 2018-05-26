@@ -15,9 +15,9 @@ public class LoginServlet extends HttpServlet {
         String username, password;
         try {
             request.setCharacterEncoding("utf-8");
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+
+        }catch (Exception e){}
+
         try{
             username = request.getParameter("username");
             password = request.getParameter("password");

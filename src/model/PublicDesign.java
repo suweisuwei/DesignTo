@@ -183,8 +183,9 @@ public class PublicDesign {
     public static PublicDesign getDesignById(int pid) {
         try {
             ResultSet rs = DBConnection.querySql("select * from public_design where pid = " + pid);
-            rs.next();
-            if (!rs.isAfterLast()) {
+
+            if (rs.next()) {
+
                 return new PublicDesign(rs);
             } else {
                 return new PublicDesign();
@@ -193,5 +194,18 @@ public class PublicDesign {
             e.printStackTrace();
             return new PublicDesign();
         }
+    }
+
+    public static List<PublicDesign> getDesignByTheme(int tid) {
+        List<PublicDesign> result = new LinkedList<>();
+        try {
+            ResultSet rs = DBConnection.querySql("select * from public_design where theme = " + tid + ";");
+            while (rs.next()) {
+                result.add(new PublicDesign(rs));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
     }
 }

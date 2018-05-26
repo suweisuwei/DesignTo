@@ -1,19 +1,41 @@
 <%@ page import="model.User" %>
+<%@ page import="servlet.MessageDispatcher" %>
 <%@ page import="model.Theme" %>
-<%@ page import="java.util.List" %>
-<%@ page import="servlet.MessageDispatcher" %><%--
-  Created by IntelliJ IDEA.
-  User: haoxingxiao
-  Date: 2018/5/25
-  Time: 02:10
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="model.Require" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
+<%
+    int uid = 0;
+    Cookie[] cookies = request.getCookies();
+    for (Cookie c : cookies) {
+        if (c.getName().equals("uid")) {
+            uid = Integer.parseInt(c.getValue());
+        }
+    }
+    User visitor = User.getUserById(uid);   //谁访问页面
+    //必须登录用户访问自己的才能进入上传界面
+    if (uid == 0) {
+        MessageDispatcher.message(response, "warning", "访问错误，请登录！", "login.jsp");
+        return;
+    }
+    //handle the rid
+    int rid = 0;
+    try{
+        rid = Integer.parseInt(request.getParameter("rid"));
+    }catch (Exception e){
+    }
+    if(rid == 0){
+        MessageDispatcher.message(response,"danger", "该需求不存在！","custom.jsp");
+    }
+    Require require = Require.getRequireByRid(rid);
+    User requirer = User.getUserById(require.getUid());
+    //读取主题
+    Theme theme = Theme.getThemeById(rid);
+
+%>
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>个人中心</title>
+    <title>提交定制</title>
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
@@ -37,40 +59,6 @@
         }
     </style>
 </head>
-<%
-    int uid = 0;
-    Cookie[] cookies = request.getCookies();
-    for (Cookie c : cookies) {
-        if (c.getName().equals("uid")) {
-            uid = Integer.parseInt(c.getValue());
-        }
-    }
-    int owner = 0;
-    try {
-        owner = Integer.parseInt(request.getParameter("uid"));
-    } catch (Exception e) {
-    }
-    User visitor = User.getUserById(uid);   //谁访问页面
-    User hoster = User.getUserById(owner);  //访问谁的页面
-    //必须登录用户访问自己的才能进入上传界面
-    if (uid == 0 || uid != owner) {
-        MessageDispatcher.message(response, "warning", "访问错误，请登录！", "login.jsp");
-        return;
-    }
-    char sex;
-    if (hoster.getSex() == 'M') {
-        sex = '♂';
-    } else if (hoster.getSex() == 'F') {
-        sex = '♀';
-    } else {
-        sex = '?';
-    }
-    int publicCount = User.getUserDesignCount(hoster.getUid());
-    int likeCount = User.getUserLikeCount(hoster.getUid());
-    //读取主题列表
-    List<Theme> themes = Theme.listTheme();
-
-%>
 <body>
 <!--导航-->
 <nav class="navbar navbar-default navbar-fixed-top" style="margin-bottom: 0">
@@ -87,7 +75,7 @@
                     <a href="theme.jsp">主题</a>
                 </li>
                 <li>
-                    <a href="custom.jsp">个性化</a>
+                    <a href="custom.jsp" class="active">个性化</a>
                 </li>
             </ul>
             <%
@@ -128,63 +116,84 @@
 </nav>
 <!--页面主体-->
 <div class="container-fluid" id="main-box">
+    <!--需求详情部分-->
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <!--个人信息栏-->
-            <div id="user-info-row" class="row">
-                <img src="<%=hoster.getHeader()%>" style="float:left;width:150px;height:150px;" class="img-thumbnail"
-                     alt="头像"/>
-                <div class="col-md-6">
-                    <label class="h4" id="username"><%=hoster.getUsername()%>
-                    </label>
-                    <span class="sex" style="color:#99ccff"><%=sex%></span>
-                    <br/>
-                    <label>共提交
-                        <label class="red"><%=publicCount%>
-                        </label>次作品，共获得
-                        <label class="red"><%=likeCount%>
-                        </label>个赞。
-                    </label>
-                    <br/>
-                    <label>联系邮箱：
-                        <a href="mailto:1009789268@qq.com"><%=hoster.getEmail()%>
+        <div class="col-md-6 col-md-offset-3 panel">
+            <div class="panel-body" style="margin-top:100px;font-size:12pt;">
+                <!--标题行-->
+                <div class="form-group">
+                    <label class="col-md-3 control-label">需求标题：</label>
+                    <div class="col-md-9">
+                        <p class="form-control-static"><%=require.getTitle()%>
+                        </p>
+                    </div>
+                </div>
+                <!--主题行-->
+                <div class="form-group">
+                    <label class="col-md-3 control-label">需求主题：</label>
+                    <div class="col-md-9">
+                        <p class="form-control-static">
+                            <a class="label label-default"
+                               onclick="window.location='theme.jsp?tid=<%=theme.getTid()%>';"><%=theme.getName()%>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <!--时间行-->
+                <div class="form-group">
+                    <label class="col-md-3 control-label">截止时间：</label>
+                    <div class="col-md-9">
+                        <p class="form-control-static"><%=require.getDdl()%>
+                        </p>
+                    </div>
+                </div>
+                <!--预算行-->
+                <div class="form-group">
+                    <label class="col-md-3 control-label">预算：</label>
+                    <div class="col-md-9">
+                        <p class="form-control-static">
+                            <label class="h4">￥</label><%=require.getBudget()%>
+                        </p>
+                    </div>
+                </div>
+                <!--需求描述行-->
+                <div class="form-group">
+                    <label class="col-md-3 control-label">需求描述：</label>
+                    <div class="col-md-9">
+                        <p class="form-control-static">
+                            <%=require.getDesp()%>
+                        </p>
+                    </div>
+                </div>
+                <!--发布者行-->
+                <div class="form-group">
+                    <label class="col-md-3 control-label">发布者：</label>
+                    <div class="col-md-9">
+                        <a class="form-control-static"
+                           onclick="window.location='usercenter_myrequire.jsp?uid=<%=requirer.getUid()%>'">
+                            <%=requirer.getUsername()%>
                         </a>
-                    </label>
-                    <br/>
-                    <label>联系电话：
-                        <a href="#"><%=hoster.getTele()%>
-                        </a>
-                    </label>
+                    </div>
                 </div>
             </div>
-            <!--分页栏-->
-            <div class="row">
-                <ul class="nav nav-tabs">
-                    <li role="presentation">
-                        <a href="usercenter_public.jsp?uid=<%=hoster.getUid()%>">公开作品</a>
-                    </li>
-                    <li role="presentation" class="active">
-                        <a href="usercenter_upload.jsp?uid=<%=hoster.getUid()%>">上传作品</a>
-                    </li>
-                    <li role="presentation">
-                        <a href="usercenter_myrequire.jsp?uid=<%=hoster.getUid()%>">我的需求</a>
-                    </li>
-                    <li role="presentation">
-                        <a href="usercenter_mycustom.jsp?uid=<%=hoster.getUid()%>">我的服务</a>
-                    </li>
-                </ul>
-            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
             <!--分页切换的主体-->
             <div class="row" style="margin-top:20px;">
                 <div class="container-fluid">
                     <div class="row" style="padding:20px;">
-                        <form class="form-horizontal" method="post" action="uploadPublic"
+                        <form class="form-horizontal" method="post" action="customsubmit"
                               enctype="multipart/form-data">
+                            <input type="hidden" name="uid" value="<%=uid%>" />
+                            <input type="hidden" name="rid" value="<%=rid%>" />
                             <!-- 作品名行 -->
                             <div class="form-group">
                                 <label for="design-name" class="col-md-3 control-label">作品名称：</label>
                                 <div class="col-md-7">
-                                    <input type="text" class="form-control" id="design-name" placeholder="" name="name">
+                                    <input type="text" class="form-control" id="design-name" placeholder="" name="title">
                                 </div>
                             </div>
                             <!-- 作品主题行 -->
@@ -192,15 +201,8 @@
                                 <label for="design-theme" class="col-md-3 control-label">作品主题：</label>
                                 <div class="col-md-7">
                                     <select class="form-control" id="design-theme" name="theme">
-                                        <%
-                                            for (Theme t : themes) {
-
-                                        %>
-                                        <option value="<%=t.getTid()%>"><%=t.getName()%>
+                                        <option value="<%=theme.getTid()%>"><%=theme.getName()%>
                                         </option>
-                                        <%
-                                            }
-                                        %>
                                     </select>
                                 </div>
                             </div>
@@ -219,11 +221,9 @@
                                     <input type="file" class="form-control" id="design-file" name="file"/>
                                 </div>
                             </div>
-                            <!-- TODO 预览上传文件 -->
                             <div class="form-group">
                                 <div class="col-md-3 col-md-offset-3">
-                                    <input type="submit" class="form-control btn btn-primary" name="design-file"
-                                           value="上传作品"/>
+                                    <input type="submit" class="form-control btn btn-primary" value="上传作品"/>
                                 </div>
                             </div>
                         </form>

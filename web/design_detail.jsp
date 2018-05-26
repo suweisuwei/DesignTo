@@ -39,7 +39,7 @@
 <%
     //读取用户信息
     int uid = 0;
-    User user = null;
+    User user;
     //读取 user 信息
     Cookie[] cs = request.getCookies();
     for (Cookie c : cs) {
@@ -69,11 +69,7 @@
     User designer = User.getUserById(design.getUid());
     //处理点赞按钮
     boolean self = false;
-    boolean logined = false;
     boolean liked = LikeOp.liked(user.getUid(), pid);
-    if (user.getUid() != 0) {
-        logined = true;
-    }
     if (designer.getUid() == user.getUid()) {
         self = true;
     }
@@ -153,8 +149,9 @@
                                         <%if (!liked) {%>
                                         onclick="like(<%=user.getUid()%>,<%=pid%>);"
                                         <%}%>
+                                        <%=liked ? "disabled=disabled" : ""%>
                                 >
-                                    <span class="glyphicon glyphicon-heart"<%=liked ? "disabled=disabled" : ""%>></span>
+                                    <span class="glyphicon glyphicon-heart"></span>
                                     <label><%=liked ? "已赞" : "点赞"%>
                                     </label>
                                 </button>
