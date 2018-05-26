@@ -19,9 +19,10 @@ public class PublicDesign {
     private int count;
     private int uid;
 
-    public PublicDesign(){
+    public PublicDesign() {
         pid = 0;
     }
+
     public PublicDesign(ResultSet rs) {
         try {
             setPid(rs.getInt(1));
@@ -132,12 +133,12 @@ public class PublicDesign {
      */
     public static boolean likeOne(int pid, int uid) {
         try {
-            if(LikeOp.liked(uid, pid)){
+            if (LikeOp.liked(uid, pid)) {
                 return false;
             }
             boolean result1 = DBConnection.updateSql("update public_design set count = count + 1 where pid = " + pid + ";");
             boolean result2 = DBConnection.updateSql("insert into like_op values(" + uid + "," + pid + ");");
-            return result1&&result2;
+            return result1 && result2;
         } catch (Exception e) {
             e.printStackTrace();
             return false;
@@ -170,10 +171,8 @@ public class PublicDesign {
         List<PublicDesign> result = new LinkedList<>();
         try {
             ResultSet rs = DBConnection.querySql("select * from public_design order by count desc limit " + count + ";");
-            rs.next();
-            while (!rs.isAfterLast()) {
+            while (rs.next()) {
                 result.add(new PublicDesign(rs));
-                rs.next();
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -181,16 +180,16 @@ public class PublicDesign {
         return result;
     }
 
-    public static PublicDesign getDesignById(int pid){
-        try{
+    public static PublicDesign getDesignById(int pid) {
+        try {
             ResultSet rs = DBConnection.querySql("select * from public_design where pid = " + pid);
             rs.next();
-            if(!rs.isAfterLast()){
+            if (!rs.isAfterLast()) {
                 return new PublicDesign(rs);
-            }else{
+            } else {
                 return new PublicDesign();
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return new PublicDesign();
         }

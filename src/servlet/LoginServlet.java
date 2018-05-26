@@ -13,6 +13,11 @@ public class LoginServlet extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse response){
         //handle the params
         String username, password;
+        try {
+            request.setCharacterEncoding("utf-8");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         try{
             username = request.getParameter("username");
             password = request.getParameter("password");
