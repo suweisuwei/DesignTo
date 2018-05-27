@@ -65,6 +65,7 @@
 
         #footer {
             width: 100%;
+            position: relative;
 
         }
 

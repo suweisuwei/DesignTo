@@ -69,6 +69,7 @@
 
         #footer {
             width: 100%;
+            position: relative;
         }
     </style>
 </head>

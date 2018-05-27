@@ -41,6 +41,7 @@
 
         #footer {
             width: 100%;
+            position: relative;
         }
     </style>
 </head>
@@ -108,7 +109,7 @@
             %>
             <div class="row nav navbar-nav navbar-right" style="margin-top:.4em">
                 <div class="col-md-12">
-                    <div class="col-md-3">
+                    <div class="col-md-5">
                         <button type="button" class="btn btn-default"
                                 onclick="window.location='usercenter_public.jsp?uid=<%=visitor.getUid()%>';">
                             <span class="glyphicon glyphicon-user" aria-hidden="true"></span><%=visitor.getUsername()%>
