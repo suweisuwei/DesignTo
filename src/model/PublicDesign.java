@@ -183,7 +183,9 @@ public class PublicDesign {
     public static PublicDesign getDesignById(int pid) {
         try {
             ResultSet rs = DBConnection.querySql("select * from public_design where pid = " + pid);
+
             if (rs.next()) {
+
                 return new PublicDesign(rs);
             } else {
                 return new PublicDesign();
