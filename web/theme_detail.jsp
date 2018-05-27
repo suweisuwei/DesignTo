@@ -115,17 +115,37 @@
                     <a href="custom.jsp">个性化</a>
                 </li>
             </ul>
+            <%
+                if (user.getUid() != 0) {
+            %>
             <div class="row nav navbar-nav navbar-right" style="margin-top:.4em">
 
                 <ul class="col-lg-3">
                     <li>
                         <button type="button" class="btn btn-default"
-                                onclick="window.location='usercenter_public.html';return false;">
-                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>User
+                                onclick="window.location='usercenter_public.jsp?uid=<%=user.getUid()%>';">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span><%=user.getUsername()%>
                         </button>
                     </li>
                 </ul>
             </div>
+            <%
+            } else {
+            %>
+            <div class="row nav navbar-nav navbar-right" style="margin-top:.4em">
+
+                <div class="col-md-12">
+                    <div class="col-md-3">
+                        <button type="button" class="btn btn-default" onclick="window.location='signup.jsp'">注册
+                        </button>
+                    </div>
+                    <div class="col-md-3"></div>
+                    <button type="button" class="btn btn-default" onclick="window.location='login.jsp'">登录</button>
+                </div>
+            </div>
+            <%
+                }
+            %>
         </div>
     </div>
 </nav>
@@ -176,7 +196,7 @@
                                             <%
                                                 if(user.getUid() == 0){
                                                     %>
-                                                window.location='login.jsp'
+                                                window.location='login.jsp';
                                             <%
                                                 }else if(!liked){
                                                     %>
