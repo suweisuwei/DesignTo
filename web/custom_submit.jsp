@@ -56,6 +56,7 @@
 
         #footer {
             width: 100%;
+            position: relative;
         }
     </style>
 </head>
@@ -83,7 +84,7 @@
             %>
             <div class="row nav navbar-nav navbar-right" style="margin-top:.4em">
                 <div class="col-md-12">
-                    <div class="col-md-3">
+                    <div class="col-md-5">
                         <button type="button" class="btn btn-default"
                                 onclick="window.location='usercenter_public.jsp?uid=<%=visitor.getUid()%>';">
                             <span class="glyphicon glyphicon-user" aria-hidden="true"></span><%=visitor.getUsername()%>
@@ -119,7 +120,7 @@
     <!--需求详情部分-->
     <div class="row">
         <div class="col-md-6 col-md-offset-3 panel">
-            <div class="panel-body" style="margin-top:100px;font-size:12pt;">
+            <div class="panel-body" style="font-size:12pt;">
                 <!--标题行-->
                 <div class="form-group">
                     <label class="col-md-3 control-label">需求标题：</label>
