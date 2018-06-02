@@ -174,7 +174,7 @@
                             </div>
                         </div>
                         <!--内容-->
-                        <div class="col-md-7" style="height:100%;">
+                        <div class="col-md-6" style="height:100%;">
                             <div class="container-fluid" style="height:100%">
                                 <!--title-->
                                 <div class="row">
@@ -208,7 +208,7 @@
                             </div>
                         </div>
                         <!--预算-->
-                        <div class="col-md-2">
+                        <div class="col-md-3">
                             <h2>
                                 <label style="color:red;">¥</label><%=require.getBudget()%>
                             </h2>
@@ -224,7 +224,7 @@
 <div class="panel-footer text-center" id="footer">
     <h4>DesignTo服装设计服务平台</h4>
     <h5>Designer:
-        <span class="glyphicon glyphicon-star" style="color: gold" aria-hidden="true"></span>Star</h5>
+        <span class="glyphicon glyphicon-star" style="color: gold" aria-hidden="true"></span>Rimo</h5>
 </div>
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>

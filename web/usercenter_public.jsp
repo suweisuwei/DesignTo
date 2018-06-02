@@ -43,6 +43,14 @@
             width: 100%;
             position: relative;
         }
+        .desptext{
+            display: -webkit-box;
+            height: 36px;
+            line-height: 18px;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
     </style>
 </head>
 
@@ -72,8 +80,8 @@
     if (uid == owner) {
         self = true;
     }
-    User visitor = User.getUserById(owner);
-    User hoster = User.getUserById(uid);
+    User  hoster = User.getUserById(owner);
+    User  visitor = User.getUserById(uid);
     char sex;
     if (hoster.getSex() == 'M') {
         sex = '♂';
@@ -84,7 +92,7 @@
     }
     int publicCount = User.getUserDesignCount(hoster.getUid());
     int likeCount = User.getUserLikeCount(hoster.getUid());
-    List<PublicDesign> list = PublicDesign.listPublicByUser(uid);
+    List<PublicDesign> list = PublicDesign.listPublicByUser(hoster.getUid());
 %>
 <!--导航-->
 <nav class="navbar navbar-default navbar-fixed-top" style="margin-bottom: 0">
@@ -175,19 +183,19 @@
             <div class="row">
                 <ul class="nav nav-tabs">
                     <li role="presentation" class="active">
-                        <a href="usercenter_public.jsp?uid=<%=owner%>">公开作品</a>
+                        <a href="usercenter_public.jsp?uid=<%=hoster.getUid()%>">公开作品</a>
                     </li>
                     <%if (self) {%>
                     <li role="presentation">
-                        <a href="usercenter_upload.jsp?uid=<%=owner%>">上传作品</a>
+                        <a href="usercenter_upload.jsp?uid=<%=hoster.getUid()%>">上传作品</a>
                     </li>
                     <%}%>
                     <li role="presentation">
-                        <a href="usercenter_myrequire.jsp?uid=<%=owner%>"><%=self ? "我的" : "个性化"%>需求</a>
+                        <a href="usercenter_myrequire.jsp?uid=<%=hoster.getUid()%>"><%=self ? "我的" : "个性化"%>需求</a>
                     </li>
                     <%if (self) {%>
                     <li role="presentation">
-                        <a href="usercenter_mycustom.jsp?uid=<%=owner%>">我的服务</a>
+                        <a href="usercenter_mycustom.jsp?uid=<%=hoster.getUid()%>">我的服务</a>
                     </li>
                     <%}%>
                 </ul>
@@ -208,8 +216,10 @@
                                 <div class="caption">
                                     <h3><%=design.getName()%>
                                     </h3>
+                                    <div class="desptext">
                                     <p><%=design.getDesp()%>
                                     </p>
+                                    </div>
                                     <div class="row">
                                         <p>
                                         <div class="col-md-5  col-md-offset-1">
@@ -263,7 +273,7 @@
 <footer class="panel-footer text-center" id="footer">
     <h4>DesignTo服装设计服务平台</h4>
     <h5>Designer:
-        <span class="glyphicon glyphicon-star" style="color: gold" aria-hidden="true"></span>Star
+        <span class="glyphicon glyphicon-star" style="color: gold" aria-hidden="true"></span>Rimo
     </h5>
 </footer>
 <!--引用 main.js-->

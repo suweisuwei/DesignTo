@@ -12,9 +12,13 @@ public class LogoutServlet extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse response){
         Cookie[] cs = request.getCookies();
         for(Cookie c : cs) {
-            if(c.getName().equals("uid"));
-            c.setMaxAge(0);
+            if(c.getName().equals("uid")) {
+                c.setMaxAge(0);
+                c.setValue("0");
+                response.addCookie(c);
+            }
         }
+
         MessageDispatcher.message(response, "success", "已退出！", "login.jsp");
     }
 }

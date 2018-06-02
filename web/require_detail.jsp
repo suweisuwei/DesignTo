@@ -294,7 +294,7 @@
 <div class="panel-footer text-center" id="footer">
     <h4>DesignTo服装设计服务平台</h4>
     <h5>Designer:
-        <span class="glyphicon glyphicon-star" style="color: gold" aria-hidden="true"></span>Star
+        <span class="glyphicon glyphicon-star" style="color: gold" aria-hidden="true"></span>Rimo
     </h5>
 </div>
 <!--引入 main.js-->

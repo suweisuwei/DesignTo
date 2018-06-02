@@ -72,8 +72,8 @@
     if (owner == 0 || uid == owner) {
         self = true;
     }
-    User visitor = User.getUserById(owner);
-    User hoster = User.getUserById(uid);
+    User hoster = User.getUserById(owner);
+    User visitor = User.getUserById(uid);
     char sex;
     if (hoster.getSex() == 'M') {
         sex = '♂';
@@ -86,7 +86,7 @@
     int likeCount = User.getUserLikeCount(hoster.getUid());
 
     //handle the requires
-    List<Require> requires = Require.listRequireByUid(uid);
+    List<Require> requires = Require.listRequireByUid(hoster.getUid());
 
 %>
 <!--导航-->
@@ -216,7 +216,7 @@
                                     </div>
                                 </div>
                                 <!--内容-->
-                                <div class="col-md-7" style="height:100%;">
+                                <div class="col-md-6" style="height:100%;">
                                     <div class="container-fluid" style="height:100%">
                                         <!--title-->
                                         <div class="row">
@@ -250,7 +250,7 @@
                                     </div>
                                 </div>
                                 <!--预算-->
-                                <div class="col-md-2">
+                                <div class="col-md-3">
                                     <h2>
                                         <label style="color:red;">¥</label><%=require.getBudget()%>
                                     </h2>
@@ -268,7 +268,7 @@
 <footer class="panel-footer text-center" id="footer">
     <h4>DesignTo服装设计服务平台</h4>
     <h5>Designer:
-        <span class="glyphicon glyphicon-star" style="color: gold" aria-hidden="true"></span>Star
+        <span class="glyphicon glyphicon-star" style="color: gold" aria-hidden="true"></span>Rimo
     </h5>
 </footer>
 <!--引用 main.js-->

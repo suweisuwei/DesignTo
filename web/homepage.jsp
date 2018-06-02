@@ -71,7 +71,14 @@
             position: relative;
 
         }
-
+        .desptext{
+            display: -webkit-box;
+            height: 36px;
+            line-height: 18px;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
     </style>
 </head>
 
@@ -155,11 +162,13 @@
                             <div class="caption">
                                 <h3><%=design.getName()%>
                                 </h3>
+                                <div class="desptext">
                                 <p><%=design.getDesp()%>
                                 </p>
+                                </div>
                                 <div class="row">
                                     <div class=" col-md-5  col-md-offset-1">
-                                        <label>
+                                        <label style="padding: 1em">
                                             <span class="glyphicon glyphicon-heart" style="color:red;"
                                                   aria-hidden="true"></span>
                                             <label class="like-count"><%=design.getCount()%>
@@ -181,7 +190,7 @@
                                                 }
                                             %>
                                                 " class="btn btn-primary pull-right"
-                                                role="button" <%=liked ? "disabled='disabled'" : ""%>>
+                                                role="button" <%=liked ? "disabled='disabled'" : ""%> style="padding-top:1em;">
                                             <span class="glyphicon glyphicon-heart
                                                   <%=liked?"liked":""%>"
                                                   aria-hidden="true"></span>
@@ -206,7 +215,7 @@
 <div class="panel-footer text-center" id="footer">
     <h4>DesignTo服装设计服务平台</h4>
     <h5>Designer:
-        <span class="glyphicon glyphicon-star" style="color: gold" aria-hidden="true"></span>Star</h5>
+        <span class="glyphicon glyphicon-star" style="color: gold" aria-hidden="true"></span>Rimo</h5>
 </div>
 
 <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->

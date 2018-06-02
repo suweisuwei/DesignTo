@@ -81,7 +81,7 @@ public class CustomSubmitServlet extends HttpServlet {
                         }
                     }
                     //params正常，插入数据库
-                    CustomDesign.addOne(rid, uid, img, desp, title);
+                    CustomDesign.addOne(rid, uid, "/img/custom/"+img, desp, title);
                     MessageDispatcher.message(response, "success", "上传成功！", "require_detail.jsp?rid=" + rid);
                 } catch (Exception e) {
                     MessageDispatcher.message(response, "danger", e.getMessage(), "custom.jsp");
