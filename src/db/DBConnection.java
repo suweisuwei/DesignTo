@@ -23,10 +23,9 @@ public class DBConnection {
         try {
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/DesignTo?useUnicode=true&characterEncoding=utf8", prop);
         } catch (Exception e) {
-            System.out.println("Error while connect:");
-            e.printStackTrace();
         }
         if (con == null) {
+
             System.out.println("Connection is NULL!");
         }
         return con;
