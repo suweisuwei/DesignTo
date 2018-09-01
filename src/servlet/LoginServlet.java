@@ -41,6 +41,6 @@ public class LoginServlet extends HttpServlet {
         Cookie c = new Cookie("uid",""+u.getUid());
         c.setMaxAge(1000*60*60);
         response.addCookie(c);
-        MessageDispatcher.message(response,"success", "登录成功！", "/homepage.jsp");
+        MessageDispatcher.message(response,"success", "登录成功！", u.getIsadmin()?"/manage_user.jsp":"/homepage.jsp");
     }
 }

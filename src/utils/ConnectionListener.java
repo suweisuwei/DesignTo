@@ -11,21 +11,21 @@ import java.sql.ResultSet;
  * TODO 做 TOMCAT 终止运行的功能。
  */
 public class ConnectionListener implements ServletContextListener {
-    private static final Log4JLogger logger = new Log4JLogger();
+//    private static final Log4JLogger logger = new Log4JLogger();
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
-        try{
-            ResultSet rs = db.DBConnection.querySql("select * from user;");
-            if(rs.next()){
-                //do nothing,for connection has established.
-            }else{
-                throw new Exception();
-            }
-        }catch (Exception e){
-            System.out.println("数据库连接失败！请检查数据库状态和连接字段！");
-            System.exit(0);
-//            throw new IOException("数据库连接失败！请检查数据库状态和连接字段！");
-        }
+//        try{
+//            ResultSet rs = db.DBConnection.querySql("select * from user;");
+//            if(rs.next()){
+//                //do nothing,for connection has established.
+//            }else{
+//                throw new Exception();
+//            }
+//        }catch (Exception e){
+//            System.out.println("数据库连接失败！请检查数据库状态和连接字段！");
+//            System.exit(0);
+////            throw new IOException("数据库连接失败！请检查数据库状态和连接字段！");
+//        }
     }
 
     @Override

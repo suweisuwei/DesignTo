@@ -14,17 +14,20 @@ public class User {
     private String email;
     private char sex;
     private String header;
+    private boolean isadmin;
 
-    public User(){
-        uid = 0;
-        username = "";
-
+    public User() {
+        setUid(0);
+        setUsername("");
+        setIsadmin(false);
     }
+
     /**
      * 返回用户所有信息，如果用户不存在，返回 uid=0的对象。
+     *
      * @param rs resultSet
      */
-    public User(ResultSet rs){
+    public User(ResultSet rs) {
         try {
             setUid(rs.getInt(1));
             setUsername(rs.getString(2));
@@ -33,10 +36,13 @@ public class User {
             setEmail(rs.getString(5));
             setSex(rs.getString(6).charAt(0));
             setHeader(rs.getString(7));
-        }catch (Exception e){
-            uid = 0;
+            setIsadmin(rs.getBoolean(8));
+        } catch (Exception e) {
+            setUid(0);
+            setIsadmin(false);
         }
     }
+
     public int getUid() {
         return uid;
     }
@@ -93,22 +99,31 @@ public class User {
         this.header = header;
     }
 
+    public boolean getIsadmin() {
+        return isadmin;
+    }
+
+    public void setIsadmin(boolean isadmin) {
+        this.isadmin = isadmin;
+    }
+
     /**
      * 获取单个用户的操作内部接口
+     *
      * @param sql
      * @return
      */
-    private static User getOneUser(String sql){
+    private static User getOneUser(String sql) {
         try {
             ResultSet rs = db.DBConnection.querySql(sql);
-            if(rs.next()){
+            if (rs.next()) {
                 User u = new User(rs);
                 rs.close();
                 return u;
-            }else{
+            } else {
                 return new User();
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
@@ -116,19 +131,19 @@ public class User {
 
     /**
      * 获取多个用户的内部操作接口
+     *
      * @param sql
      * @return
      */
-    private static List<User> getMultiUser(String sql){
+    private static List<User> getMultiUser(String sql) {
         List<User> list = new LinkedList<>();
         try {
             ResultSet rs = db.DBConnection.querySql(sql);
-            rs.next();
-            while(!rs.isAfterLast()){
+            while (rs.next()) {
                 list.add(new User(rs));
             }
             rs.close();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return list;
@@ -136,38 +151,55 @@ public class User {
 
     /**
      * 通过用户名获取用户信息
+     *
      * @param name
      * @return
      */
-    public static User getUserByName(String name){
-        return getOneUser("select * from user where username = '"+name+"';");
+    //根据用户名获取用户
+    public static User getUserByName(String name) {
+        return getOneUser("select * from user where username = '" + name + "';");
     }
 
     /**
      * 通过用户 ID 获取用户信息
+     *
      * @param id
      * @return
      */
-    public static User getUserById(int id){
-        return getOneUser("select * from user where uid = "+id+";");
+    //根据用户ID 获取用户
+    public static User getUserById(int id) {
+        return getOneUser("select * from user where uid = " + id + ";");
     }
 
-    public static boolean addOneUser(String username, String password, String tele, String email, char sex, String img){
+    /**
+     * 添加一位用户。用户注册操作。
+     *
+     * @param username
+     * @param password
+     * @param tele
+     * @param email
+     * @param sex
+     * @param img
+     * @return
+     */
+    //添加一个用户
+    public static boolean addOneUser(String username, String password, String tele, String email, char sex, String img) {
         try {
             return db.DBConnection.updateSql("insert into user(username,password,tel,email,sex,header) values('" + username + "','" + password + "','" + tele + "','" + email + "','" + sex + "','" + img + "');");
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return false;
         }
     }
 
-    public static int getUserDesignCount(int uid){
+    //获取用户上传作品总数
+    public static int getUserDesignCount(int uid) {
         int publicCount;
         try {
             ResultSet rs = DBConnection.querySql("select count(*) from public_design where uid=" + uid + ";");
-            if(rs.next()) {
+            if (rs.next()) {
                 publicCount = rs.getInt(1);
-            }else{
+            } else {
                 publicCount = 0;
             }
         } catch (Exception e) {
@@ -176,13 +208,14 @@ public class User {
         return publicCount;
     }
 
-    public static int getUserLikeCount(int uid){
+    //获取用户被点赞总数
+    public static int getUserLikeCount(int uid) {
         int likeCount;
         try {
             ResultSet rs = DBConnection.querySql("select sum(count) from public_design where uid = " + uid + ";");
-            if(rs.next()) {
+            if (rs.next()) {
                 likeCount = Integer.parseInt(rs.getString(1));
-            }else{
+            } else {
                 likeCount = 0;
             }
         } catch (Exception e) {
@@ -190,4 +223,26 @@ public class User {
         }
         return likeCount;
     }
+
+    //查询所有用户
+    public static List<User> listAllUser() {
+        return getMultiUser("select * from user");
+    }
+
+    public static boolean modifyUser(int uid, String username, String tele, String email, char sex, int isadmin) {
+        try {
+            return DBConnection.updateSql("update user set username='" + username + "', tel='" + tele + "', email='" + email + "',sex='" + sex + "',isadmin=" + isadmin + " where uid=" + uid + ";");
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public static boolean deleteUser(int uid){
+        try{
+            return DBConnection.updateSql("delete from user where uid = "+uid + ";");
+        }catch (Exception e){
+            return false;
+        }
+    }
+
 }

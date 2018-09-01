@@ -73,6 +73,7 @@ public class SignupServlet extends HttpServlet {
                         //取出上传文件的文件名称
                         String name = item.getName();
                         //取得上传文件以后的存储路径
+                        //TODO 文件上传需要判断name是否为""（是否选择了文件）。
                         String fileName = name.substring(name.lastIndexOf('\\') + 1, name.length());
                         String appendix = fileName.substring((fileName.lastIndexOf('.')), fileName.length());
                         headerName = username + appendix;

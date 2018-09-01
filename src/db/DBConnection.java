@@ -5,7 +5,7 @@ import java.util.Properties;
 
 public class DBConnection {
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "";
+    private static final String PASSWORD = "djj213xhx666";
 
     /**
      * 创建一个连接

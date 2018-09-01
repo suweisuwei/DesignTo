@@ -77,4 +77,27 @@ public class Theme {
         }
         return result;
     }
+
+    public static boolean modifyTheme(int tid, String name,String img){
+        try{
+            return DBConnection.updateSql("update theme set name = '"+name+"', img = '"+img+"' where tid = " + tid + ";");
+        }catch (Exception e){
+            return false;
+        }
+    }
+
+    public static boolean deleteTheme(int tid){
+        try{
+            return DBConnection.updateSql("delete from theme where tid = " + tid + ";");
+        }catch (Exception e){
+            return false;
+        }
+    }
+    public static boolean addTheme(String name, String img){
+        try{
+            return DBConnection.updateSql("insert into theme(name, img) values('"+name+"','"+img+"');");
+        }catch (Exception e){
+            return false;
+        }
+    }
 }
